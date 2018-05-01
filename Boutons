@@ -1,0 +1,7 @@
+
+
+
+
+.bouton{
+	float : right; /* Place le bouton publi a gauche quand appele*/
+}

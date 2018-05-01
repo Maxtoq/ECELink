@@ -1,0 +1,13 @@
+
+
+panel-body, .boutonpubli{
+	display: inline;-block;
+}
+
+.boutonpubli{
+	float : right; /* Place le bouton publi a gauche quand appele*/
+}
+
+textarea[name=publication] {
+  resize: none;
+} 
