@@ -1,12 +1,13 @@
 
-panel-body, .boutonpubli{
-	display: inline;-block;
-}
-
-.boutonpubli{
+button, .buttonpubli{
 	float : right; /* Place le bouton publi a gauche quand appele*/
 }
 
 textarea[name=publication] {
   resize: none;
-} 
+}
+
+#conteneur_photo{
+	margin: 1px;
+	padding : 8px;
+}
