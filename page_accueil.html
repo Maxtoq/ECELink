@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type = "text/css" href ="Navbar.css">
   <link rel="stylesheet" type = "text/css" href ="Boutons.css">
+  <link rel="stylesheet" href="css/demo.css">
+	<link rel="stylesheet" href="css/footer-distributed.css">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
@@ -56,10 +60,10 @@
 
 <div class="container text-center">
   <div class="row">
-    <div class="col-sm-3 well">
+    <div class="col-sm-2 well">
       <div class="well">
         <!-- Ecriture sous profil en haut a gauche -->
-        <p><strong><a href="#">Mon Profil</a></strong></p>
+        <h4 style ="color:#3277b3;"><a href="#">Mon Profil</a></h4>
         <a href="#"><img src="mickey.jpg" class="img-circle" height="65" width="65" alt="Avatar"></a>
 
       </div>
@@ -67,7 +71,7 @@
 
 <div class="Description_Pro">
         <!-- Ecriture sous les centres d'interêts en haut a gauche -->
-        <p style ="color:#3277b3;"><strong>Parcours Pro</strong></p>
+        <h4 style ="color:#3277b3;">Parcours Pro</h4>
         <p>
           Scola Lycée Hoche
         </p>
@@ -77,7 +81,7 @@
 </div>
 <div class="Info perso">
   <!-- Ecriture sous les parcours pro a gauche -->
-        <p style ="color:#3277b3;"><strong>Descritpion Personnelle</strong></p>
+        <h4 style ="color:#3277b3;">Descritpion Personnelle</h4>
         <p>
           Majeur SE
         </p>
@@ -129,18 +133,60 @@
    </div>
 </div>
 </div>
-<div class="col-sm-2 well">
-  <div class="well" id = "contsug">
-    <small><strong>Purex élevage de Poulet </strong></small><br></br>
-    <small>Recherche hommes/ femmes / créatures fantastiques pour  féconder des coqs! </small>
-    <input type="button" value="GO" id="boutongo">
+
+
+<div class="col-sm-3" >
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title" align=left >Suggestions :</h3>
+  </div>
+  <div class="panel-body">
+     <div class="panel panel-info">
+       <div class="panel-heading">
+      <h5 class="panel-title" align=left >Offre d'emploi :</h5>
+      </div>
+      <div class="panel-body">
+        <h6 align =left><strong>Purex élevage de Poulet : </strong></h6>
+           <small> Recherche hommes/ femmes / créatures fantastiques pour  féconder des coqs! </small><br></br>
+           <small> Posté par: Dc Mephisto </small>
+           <input type="button" value="GO" id="boutongo">
+         </div>
+     </div>
   </div>
 </div>
 </div>
+</div>
+</div>
 
+<footer class="footer-distributed">
 
-<footer>
-  <p>Footer Text</p>
+  <div class="footer-right">
+
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-github"></i></a>
+
+  </div>
+
+  <div class="footer-left">
+
+    <p class="footer-links">
+      <a href="#">Accueil</a>
+      ·
+      <a href="#">Profil</a>
+      ·
+      <a href="#">Réseau</a>
+      ·
+      <a href="#">Messages</a>
+
+      ·
+      <a href="#">Contact</a>
+    </p>
+
+    <p>Le Coon et sa Bande &copy; 2018</p>
+  </div>
+
 </footer>
 </body>
 </html>
