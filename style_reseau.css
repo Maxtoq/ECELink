@@ -1,18 +1,65 @@
 
-.uh{
+.panel-body{
 	display: flex;
     flex-direction: column;
+
+}
+.yala{
+	position: relative;
+	right:10px;
+}
+#photo1{
+	position: relative;
+	left: 30px;
+
+}
+.s{
+	position: relative;
+	left: 50px;
+}
+p{
+	display: inline;
 }
 
-.img-circle{
-	position: relative;
-	right:15px;
-}
+
 .textarea{
 	text-align: center;
 	width: 100px;
 	height: 18px;
 	position: relative;
-	top: 5px;
-	left: 20px;
+	
+	left: 10px;
+
+}
+#photo2{
+	position: relative;
+	right:70px;
+}
+.yalou{
+	position: relative;
+	right:100px;
+}
+.s2{
+	position: relative;
+	right: 60px;
+}
+
+.titredroit{
+	position: relative;
+	bottom: 10px;
+}
+
+#photo{
+	
+	text-align: center;
+}
+.nom{
+	text-align: center;
+}
+.etuddec{
+	position: fixed;
+	border-left: 15px
+}
+.but{
+	text-align: center;
 }
