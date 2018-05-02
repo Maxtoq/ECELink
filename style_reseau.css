@@ -56,10 +56,8 @@ p{
 .nom{
 	text-align: center;
 }
-.etuddec{
-	position: fixed;
-	border-left: 15px
-}
-.but{
-	text-align: center;
+
+.etud{
+	position: relative;
+	right: 80px;
 }
