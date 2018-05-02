@@ -16,7 +16,7 @@
 
     $db = "ecelink";
 
-    // On se connecte à la db
+    // On se connecte à la dbs
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $db);
 
@@ -30,7 +30,7 @@
         if ($result->num_rows > 0) {
             // On récupère le résultat
             $data = mysqli_fetch_row($result);
-
+x
             // On vérifie que le mot de passe est le bon
 		    if ($data[5] == $mdp) echo "Connexion au compte réussie";
             else echo "Mot de passe erroné";
@@ -40,4 +40,4 @@
     else echo "Database not found";
 
     mysqli_close($db_handle);
- ?>
+?>

@@ -3,3 +3,6 @@ template page accueil:
 https://www.journaldunet.fr/web-tech/developpement/1202675-quelles-modifications-faire-dans-les-css-pour-changer-la-couleur-de-la-navbar-barre-de-navigation-dans-bootstrap/
 template footer:
 file:///C:/wamp/www/projetweb/freebie-footer-templates/index.html
+openclassroom courses :
+https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/lire-des-donnees-2
+https://openclassrooms.com/courses/adoptez-une-architecture-mvc-en-php/isoler-laffichage-du-traitement-php
