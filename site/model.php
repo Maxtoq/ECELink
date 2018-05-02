@@ -11,5 +11,7 @@ function initConn()
 	}
 }
 
+function logInUser($us_pseudo, $us_mdp) {
 
+}
 ?>

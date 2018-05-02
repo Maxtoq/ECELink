@@ -1,7 +1,7 @@
-<?php $title = 'ECELink - Accueil'; ?>
+<?php $title = 'ECELink - Login'; ?>
 
 <?php ob_start(); ?>
-<form action="conn.php" method="post">
+<form action="index.php?action=accueil" method="post">
     <table>
         <tr>
             <td>Pseudo :</td>
