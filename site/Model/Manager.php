@@ -1,7 +1,11 @@
 <?php
 class Manager {
 
-    protected static $db;
+    protected $db;
+
+    public function __construct($_db) {
+        $db = $_db;
+    }
 
     public function dbConnect() {
         try

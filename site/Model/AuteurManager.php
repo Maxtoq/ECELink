@@ -6,6 +6,10 @@ class AuteurManager extends Manager {
 
     const AUTEUR_TABLE = 'auteur';
 
+    public function __construct($_db) {
+        parent::__construct($_db);
+    }
+
     public function add(Auteur $auteur) {
 
     }

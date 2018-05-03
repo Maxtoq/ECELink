@@ -1,28 +1,35 @@
 <?php
-require('Model/model.php');
 require('Model/AuteurManager.php');
 
 class Controler {
     private $auteurManager;
 
-    public function __contruct() {
-        $this->auteurManager = new AuteurManager;
-        $auteurManager->dbConnect();
+    public function __construct() {
+        try
+    	{
+    	    $db = new PDO('mysql:host=localhost;dbname=ecelink;charset=utf8', 'root', '');
+    	}
+    	catch(Exception $e)
+    	{
+    	    die('Erreur connexion db : '.$e->getMessage());
+        }
+        $this->auteurManager = new AuteurManager($db);
+        //$this->auteurManager->dbConnect();
     }
 
-    function LogIn() {
+    public function LogIn() {
         require('/connectView.php');
     }
 
-    function tryLogIn($tryPseudo, $tryMdp) {
-        
+    public function tryLogIn($tryPseudo, $tryMdp) {
+        $this->auteurManager->getByPseudo($tryPseudo);
     }
 
-    function getLoad() {
+    public function getLoad() {
         require('/loadView.php');
     }
 
-    function getAccueil() {
+    public function getAccueil() {
         require('/accueilView.php');
     }
 }
