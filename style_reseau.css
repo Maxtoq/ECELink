@@ -52,12 +52,27 @@ p{
 #photo{
 	
 	text-align: center;
+	position: relative;
+	top:6px;
 }
 .nom{
 	text-align: center;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    top:5px;
 }
 
 .etud{
 	position: relative;
 	right: 80px;
+}
+.but{
+	position: relative;
+	bottom: 30px;
+}
+#waouf{
+	border:solid 1px #C0C0C0;
+	border-radius: 10px;
 }
