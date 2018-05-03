@@ -84,15 +84,23 @@ p{
 	position: relative;
 	right: 80px;
 }
-.but{
-	position: relative;
-	bottom: 30px;
-}
 .but1{
 	position: relative;
 	bottom: 30px;
 }
-#waouf{
+.but2{
+	position: relative;
+	bottom: 30px;
+}
+.but3{
+	position: relative;
+	bottom: 30px;
+}
+.bu{
+	position: relative;
+	bottom: 30px;
+}
+#waouf3{
 	border:solid 1px #C0C0C0;
 	border-radius: 10px;
 }
