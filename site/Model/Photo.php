@@ -1,16 +1,16 @@
 <?php
 class Photo extends Post {
 
-    private $photo;
+    private $img;
 
-    public function __construct($_id, $_actif, $_id_auteur, $_texte, $_photo) {
+    public function __construct($_id, $_actif, $_id_auteur, $_texte, $_img) {
         parent::__construct($_id, $_actif, $_id_auteur, $_texte);
 
-        $this->setPhoto($_photo);
+        $this->setImg($_img);
     }
 
-    public function setPhoto($_photo) { $this->photo = $_photo; }
+    public function setImg($_img) { $this->img = $_img; }
 
-    public function getPhoto() { return $photo; }
+    public function getImg() { return $img; }
 }
 ?>

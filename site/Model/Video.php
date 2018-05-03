@@ -1,16 +1,16 @@
 <?php
 class Video extends Post {
 
-    private $video;
+    private $vid;
 
-    public function __construct($_id, $_actif, $_id_auteur, $_texte, $_video) {
+    public function __construct($_id, $_actif, $_id_auteur, $_texte, $_vid) {
         parent::__construct($_id, $_actif, $_id_auteur, $_texte);
 
-        $this->setVideo($_video);
+        $this->setVid($_vid);
     }
 
-    public function setVideo($_video) { $this->video = $_video; }
+    public function setVid($_vid) { $this->vid = $_vid; }
 
-    public function getVideo() { return $video; }
+    public function getVid() { return $vid; }
 }
 ?>

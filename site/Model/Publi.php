@@ -1,5 +1,5 @@
 <?php
-class Publication extends Object {
+class Publi extends Object {
 
     protected $id_auteur;
     protected $id_post;
