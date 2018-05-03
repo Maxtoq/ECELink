@@ -24,21 +24,23 @@
   color: #337AB7;
 }
 
-#footer, .page-wrap:after {
+/*#footer, .page-wrap:after {
   height: 142px;
-}
+}*/
 #footer {
-    height: 5%;
-    margin-top: 100px;
+  width: 100%;
+ margin: auto;
+ position: absolute;
+ bottom: 0px;
+ border: solid 1px #336699;
 }
 
 
 
 html,
-body,
-.container {
+body{
     height: 100%;
-    margin-bottom: -142px;
+    margin-bottom: -200;
 }
 html,
 body,
