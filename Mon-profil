@@ -48,12 +48,10 @@
    </div>
  </form>
  <ul class="nav navbar-nav navbar-right">
-    <li><a  data-toggle="popover" data-placement="bottom" data-original-title="Notification" data-content="Content">
-      <button class="btn btn-lg btn-link">
-       <span class="glyphicon glyphicon-fire"></span>
+    <li><button class="btn btn-lg btn-link">
+     <span class="glyphicon glyphicon-fire"></span>
      <span class="badge badge-notify">3</span>
     </button>
-  </a>
   </li>
    <li><a href="#">M</a></li>
  </ul>
@@ -80,13 +78,13 @@
              </div>
            <div class="panel-body">
              <h4><strong style ="color:#3277b3;"> Loisirs : </strong></h4>
-             <p id="loisirs"> La destruction, la mort et surtout la vente de sexe aux enfants!</p>
+             <p> La destruction, la mort et surtout la vente de sexe aux enfants!</p>
              <h4><strong style ="color:#3277b3;"> Sports : </strong></h4>
-             <p id ="sports"> Karaté bien sur.</p>
+             <p> Karaté bien sur.</p>
              <h4> <strong style ="color:#3277b3;">Voyage : </strong></h4>
-             <p id="Voyage"> Vahlala une fois par semaine.</p>
+             <p> Vahlala une fois par semaine.</p>
              <div class="buttonmodif">
-               <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" onclick="textLoisir()" data-target="#ModalpubliDP" align = right >Modifier</button>
+               <button type="button" class="btn btn-primary btn-sm" align = right >Modifier</button>
              </div>
            </div>
            </div>
@@ -107,8 +105,8 @@
                    </div>
                    <div class="panel-body"> <p> President de La Disney Unlimited Compagny HAHA,
                         Vous allez me laisser vendre du sexe à vos petites filles</p>
-                        <div class="buttonmodif" id="button_modif">
-                          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalpubliCV" align = right >Modifier</button>
+                        <div class="buttonmodif">
+                          <button type="button" class="btn btn-primary btn-sm" align = right >Modifier</button>
                         </div>
                    </div>
                </div>
@@ -120,7 +118,7 @@
                    </div>
                    <div class="panel-body"> <p> Plein de trucs géniaux</p>
                    <div class="buttonmodif">
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalpubliPR">Modifier</button>
+                      <button type="button" class="btn btn-primary btn-sm">Modifier</button>
                    </div>
                    </div>
                </div>
@@ -135,86 +133,6 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="ModalpubliDP" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
- <div class="modal-content">
-   <div class="modal-header">
-     <h4 class="modal-title" id="exampleModalLabel"><strong>Modifier</strong></h4>
-     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-       <span aria-hidden="true">&times;</span>
-     </button>
-   </div>
-   <div class="modal-body">
-     <form method="post" action="">
-       <h4><strong style ="color:#3277b3;"> Loisirs : </strong></h4>
-       <p>Quels sont vos losirs ? :</p>
-       <textarea name="ameliorer" id="arealoisir" rows="5" cols="50">Rentrez les ici!</textarea>
-     </form>
-     <form method="post" action="">
-       <h4><strong style ="color:#3277b3;"> Sports : </strong></h4>
-       <p>Quels sports pratiquez-vous ? :</p>
-       <textarea name="ameliorer" id="arealoisir" rows="5" cols="50">Rentrez les ici!</textarea>
-     </form>
-     <form method="post" action="">
-       <h4><strong style ="color:#3277b3;"> Voyage : </strong></h4>
-       <p>Quels voyages avaient vous fait? :</p>
-       <textarea name="ameliorer" id="arealoisir" rows="5" cols="50">Rentrez les ici!</textarea>
-     </form>
-   </div>
-   <div class="modal-footer">
-     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     <button type="button" class="btn btn-primary" onclick="ChangeText()">Save changes</button>
-   </div>
- </div>
-</div>
-</div>
-<div class="modal fade" id="ModalpubliCV" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
- <div class="modal-content">
-   <div class="modal-header">
-     <h4 class="modal-title" id="exampleModalLabel"><strong>Modifier</strong></h4>
-     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-       <span aria-hidden="true">&times;</span>
-     </button>
-   </div>
-   <div class="modal-body">
-     <form method="post" action="traitement.php">
-       <p>Rentrez votre texte ici :</p>
-       <textarea name="ameliorer" id="ameliorer" rows="5" cols="50">C'est ici que ça se passe!</textarea>
-     </form>
-   </div>
-   <div class="modal-footer">
-     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     <button type="button" class="btn btn-primary" onclick="ChangeText()">Save changes</button>
-   </div>
- </div>
-</div>
-</div>
-
-<div class="modal fade" id="ModalpubliPR" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
- <div class="modal-content">
-   <div class="modal-header">
-     <h4 class="modal-title" id="exampleModalLabel"><strong>Modifier</strong></h4>
-     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-       <span aria-hidden="true">&times;</span>
-     </button>
-   </div>
-   <div class="modal-body">
-     <form method="post" action="traitement.php">
-       <p>Rentrez votre texte ici :</p>
-       <textarea name="ameliorer" id="ameliorer" rows="5" cols="50"> C'est ici que ça se passe!</textarea>
-     </form>
-   </div>
-   <div class="modal-footer">
-     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     <button type="button" class="btn btn-primary" onclick="ChangeText()">Save changes</button>
-   </div>
- </div>
-</div>
-</div>
-
-
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
  <div class="modal-content">
@@ -241,7 +159,6 @@
 </div>
 </div>
 </section>
-
 
 <footer class="footer-distributed" id ="footer">
 
