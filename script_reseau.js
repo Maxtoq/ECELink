@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#bute").click(function(){
+    $(".but").click(function(){
         $("#waouf").remove();
-    });
+    });  
 });
