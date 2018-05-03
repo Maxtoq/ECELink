@@ -4,7 +4,23 @@
     flex-direction: column;
 
 }
-.yala{
+.yala1{
+	position: relative;
+	right:10px;
+}
+.yala2{
+	position: relative;
+	right:10px;
+}
+.yala3{
+	position: relative;
+	right:10px;
+}
+.yala4{
+	position: relative;
+	right:10px;
+}
+.yala5{
 	position: relative;
 	right:10px;
 }
@@ -87,4 +103,8 @@ p{
 #waouf2{
 	border:solid 1px #C0C0C0;
 	border-radius: 10px;
+}
+.y{
+	position: relative;
+	left: 10px;
 }
