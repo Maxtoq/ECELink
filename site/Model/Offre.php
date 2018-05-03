@@ -1,4 +1,6 @@
 <?php
+require_once("Post.php");
+
 class Offre extends Post {
 
     private $type_offre;

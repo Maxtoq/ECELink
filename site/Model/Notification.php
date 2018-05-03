@@ -1,4 +1,6 @@
 <?php
+require_once("Object.php");
+
 class Notification extends Object {
 
     protected $id_emmetteur;

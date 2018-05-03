@@ -1,4 +1,6 @@
 <?php
+require_once("Auteur.php");
+
 class Etudiant extends Auteur {
 
     private $promo;

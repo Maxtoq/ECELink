@@ -1,4 +1,6 @@
 <?php
+require_once("Post.php");
+
 class Video extends Post {
 
     private $vid;

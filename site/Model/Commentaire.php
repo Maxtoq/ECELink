@@ -1,4 +1,6 @@
 <?php
+require_once("Object.php");
+
 class Commentaire extends Object {
 
     protected $id_auteur;

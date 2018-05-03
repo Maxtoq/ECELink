@@ -1,4 +1,6 @@
 <?php
+require_once("Object.php");
+
 class Message extends Object {
 
     protected $id_emmetteur;

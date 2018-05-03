@@ -1,4 +1,6 @@
 <?php
+require_once("Object.php");
+
 class Evenement extends Object {
 
     protected $id_auteur;

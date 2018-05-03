@@ -1,4 +1,6 @@
 <?php
+require_once("Post.php");
+
 class Photo extends Post {
 
     private $img;

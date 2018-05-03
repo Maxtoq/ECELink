@@ -1,4 +1,6 @@
 <?php
+require_once("Auteur.php");
+
 class Pro extends Auteur {
 
     private $entreprise;

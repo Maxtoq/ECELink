@@ -1,4 +1,6 @@
 <?php
+require_once("Object.php");
+
 class Auteur extends Object {
 
     protected $nom;

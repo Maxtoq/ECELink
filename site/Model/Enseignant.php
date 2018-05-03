@@ -1,4 +1,6 @@
 <?php
+require_once("Auteur.php");
+
 class Enseignant extends Auteur {
 
     private $matiere;

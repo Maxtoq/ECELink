@@ -1,5 +1,7 @@
 <?php
-require('controler.php');
+require('Controler/controler.php');
+
+$controler = new Controler;
 
 if (isset($_GET['action'])) {
     if ($_GET['action'] == 'accueil') {
@@ -7,18 +9,18 @@ if (isset($_GET['action'])) {
         $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
     	$mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
     	if (($pseudo != "") && ($mdp != "")) {
-            tryLogIn($pseudo, $mdp);
+            $controler->tryLogIn($pseudo, $mdp);
 
-            getAccueil();
+            $controler->getAccueil();
     	}
     	else {
-            LogIn();
+            $controler->LogIn();
     	}
 
 
     }
 }
 else {
-    LogIn();
+    $controler->LogIn();
 }
 ?>
