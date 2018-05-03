@@ -6,5 +6,6 @@ file:///C:/wamp/www/projetweb/freebie-footer-templates/index.html
 openclassroom courses :
 https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/lire-des-donnees-2
 https://openclassrooms.com/courses/adoptez-une-architecture-mvc-en-php/isoler-laffichage-du-traitement-php
+https://openclassrooms.com/courses/programmez-en-oriente-objet-en-php/manipulation-de-donnees-stockees
 modèle interface :
 https://www.youtube.com/watch?v=A0QDIMi7Fok&t=2s
