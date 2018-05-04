@@ -1,4 +1,5 @@
 <?php $title = 'ECELink - Accueil'; ?>
+<?php $Nom = 'Maxime Toquebiau' ?>
 
 <?php ob_start(); ?>
 <div class="container text-center">
@@ -6,7 +7,7 @@
     <div class="col-sm-2 well">
       <div class="well">
         <!-- Ecriture sous profil en haut a gauche -->
-        <h4 style ="color:#3277b3;"><a href="#">Mon Profil</a></h4>
+        <h4 style ="color:#3277b3;"><a href="#"><?= $Nom ?></a></h4>
         <a href="#"><img src="mickey.jpg" class="img-circle" height="65" width="65" alt="Avatar"></a>
 
       </div>
