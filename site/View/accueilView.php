@@ -11,7 +11,7 @@
             <div class="col-sm-2 well">
                 <div class="well" id="photoHG">
                     <!-- Ecriture sous profil en haut a gauche -->
-                    <h5 style ="color:#3277b3;"><a href="#"><?php echo($this->user->getPrenom().' '.$this->user->getNom()); ?></a></h5>
+                    <h5 style ="color:#3277b3;"><a href="#"><?= $this->user->getPrenom().' '.$this->user->getNom() ?></a></h5>
                     <a href="#"><img src="img/mickey.jpg" class="img-circle" height="80" width="80" alt="Avatar"></a>
                 </div>
 
@@ -24,7 +24,7 @@
                 <div class="Info perso">
                     <!-- Ecriture sous les parcours pro a gauche -->
                     <h4 style ="color:#3277b3;">Descritpion Personnelle</h4>
-                    <p><?php echo($this->user->getDescr()); ?></p>
+                    <p><?= $this->user->getDescr() ?></p>
                 </div>
             </div>
 
