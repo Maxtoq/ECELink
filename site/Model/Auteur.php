@@ -8,9 +8,9 @@ class Auteur extends Object {
     protected $mail;
     protected $pseudo;
     protected $mdp;
-    protected $desc;
+    protected $descr;
 
-    public function __construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_desc) {
+    public function __construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr) {
         $this->setId($_id);
         $this->setActif($_actif);
         $this->setNom($_nom);
@@ -18,7 +18,7 @@ class Auteur extends Object {
         $this->setMail($_mail);
         $this->setPseudo($_pseudo);
         $this->setMdp($_mdp);
-        $this->setDesc($_desc);
+        $this->setDescr($_descr);
     }
 
     /*public function hydrate(array $donnees) {
@@ -38,13 +38,13 @@ class Auteur extends Object {
     public function setMail($_mail) { $this->mail = $_mail; }
     public function setPseudo($_pseudo) { $this->pseudo = $_pseudo; }
     public function setMdp($_mdp) { $this->mdp = $_mdp; }
-    public function setDesc($_desc) { $this->desc = $_desc; }
+    public function setDescr($_descr) { $this->descr = $_descr; }
 
     public function getNom() { return $this->nom; }
     public function getPrenom() {  return $this->prenom; }
     public function getMail() {  return $this->mail; }
     public function getPseudo() {  return $this->pseudo; }
     public function getMdp() {  return $this->mdp; }
-    public function getDesc() {  return $this->desc; }
+    public function getDescr() {  return $this->descr; }
 }
 ?>

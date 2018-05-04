@@ -29,7 +29,7 @@ class AuteurManager extends Manager {
     public function getById($id) {
         $id = (int) $id;
 
-        $q = $this->db->query('SELECT * FROM '.self::AUTEUR_TABLE.' WHERE id = '.$id);
+        $q = Manager::$db->query('SELECT * FROM '.self::AUTEUR_TABLE.' WHERE id = '.$id);
 
         if ($q) {
             $data = $q->fetch(PDO::FETCH_ASSOC);
@@ -63,20 +63,28 @@ class AuteurManager extends Manager {
     public function update(Auteur $auteur) {
         // On crée la requête update
         // On commence par la préparer
-        $q = $this->db->prepare('UPDATE '.self::AUTEUR_TABLE.' SET nom = :nom, prenom = :prenom, mail = :mail, pseudo = :pseudo, mdp = :mdp, desc = :desc, actif = :actif WHERE id = :id');
+        $q = Manager::$db->prepare('UPDATE auteur SET nom = :nom, prenom = :prenom, mail = :mail, pseudo = :pseudo, mdp = :mdp, descr = :descr, actif = :actif WHERE id = :id');
 
         // On remplit les champs de la requête
-        $q->bindValue(':nom', $auteur->getNom(), PDO::PARAM_STR);
-        $q->bindValue(':prenom', $auteur->getPrenom(), PDO::PARAM_STR);
-        $q->bindValue(':mail', $auteur->getMail(), PDO::PARAM_STR);
-        $q->bindValue(':pseudo', $auteur->getPseudo(), PDO::PARAM_STR);
-        $q->bindValue(':mdp', $auteur->getMdp(), PDO::PARAM_STR);
-        $q->bindValue(':desc', $auteur->getDesc(), PDO::PARAM_STR);
-        $q->bindValue(':actif', $auteur->getActif(), PDO::PARAM_INT);
-        $q->bindValue(':id', $auteur->getNom(), PDO::PARAM_INT);
+        $nom = $auteur->getNom();
+        $prenom = $auteur->getPrenom();
+        $mail = $auteur->getMail();
+        $pseudo = $auteur->getPseudo();
+        $mdp = $auteur->getMdp();
+        $descr = $auteur->getDescr();
+        $actif = $auteur->getActif();
+        $id = $auteur->getId();
+        $q->bindParam(':nom', $nom);
+        $q->bindParam(':prenom', $prenom);
+        $q->bindParam(':mail', $mail);
+        $q->bindParam(':pseudo', $pseudo);
+        $q->bindParam(':mdp', $mdp);
+        $q->bindParam(':descr', $descr);
+        $q->bindParam(':actif', $actif, PDO::PARAM_INT);
+        $q->bindParam(':id', $id, PDO::PARAM_INT);
 
         // On éxécute la requête
-        $q->execute();
+        if (!$q->execute()) die("update :(");
     }
 
     /**
@@ -89,7 +97,7 @@ class AuteurManager extends Manager {
      */
     public function LogUser($tryPseudo, $tryMdp) {
         // On recherche un auteur dans la table avec le pseudo demandé
-        $q = $this->db->query('SELECT * FROM '.self::AUTEUR_TABLE.' WHERE pseudo = \''.$tryPseudo.'\'');
+        $q = Manager::$db->query('SELECT * FROM '.self::AUTEUR_TABLE.' WHERE pseudo = \''.$tryPseudo.'\'');
 
         // Si la requête retourne bien un auteur
         if ($q) {
@@ -99,7 +107,7 @@ class AuteurManager extends Manager {
             // Si le mot de passe est le bon
             if ($tryMdp == $data['mdp']) {
                 // On retourne un nouvel Auteur avec les données correspondantes
-                return new Auteur($data['id'], $data['actif'], $data['nom'], $data['prenom'], $data['mail'], $data['pseudo'], $data['mdp'], $data['desc']);
+                return new Auteur($data['id'], $data['actif'], $data['nom'], $data['prenom'], $data['mail'], $data['pseudo'], $data['mdp'], $data['descr']);
             }
             // Sinon, on retourne null
             else return null;

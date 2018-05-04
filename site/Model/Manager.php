@@ -1,7 +1,7 @@
 <?php
 class Manager {
 
-    protected $db;
+    protected static $db;
 
     public function __construct() {
         $this->dbConnect();
@@ -9,7 +9,7 @@ class Manager {
 
     public function dbConnect() {
         try {
-    	    $this->db = new PDO('mysql:host=localhost;dbname=ecelink;charset=utf8', 'root', '');
+    	    Manager::$db = new PDO('mysql:host=localhost;dbname=ecelink;charset=utf8', 'root', '');
     	}
     	catch(Exception $e) {
     	    die('Erreur connexion db : '.$e->getMessage());
