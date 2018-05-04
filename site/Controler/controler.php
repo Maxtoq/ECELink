@@ -34,15 +34,15 @@ class Controler {
     }
 
     public function getLoad() {
-        require('/loadView.php');
+        require('View/loadView.php');
     }
 
     public function getAccueil() {
-        require('/accueilView.php');
+        require('View/accueilView.php');
     }
 
     public function getLogIn() {
-        require('/connectView.php');
+        require('View/connectView.php');
     }
 }
 ?>
