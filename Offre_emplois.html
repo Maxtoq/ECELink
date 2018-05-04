@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="css/footer-distributed.css">
 <link rel="stylesheet" href="style_page_emplois.css">
 <link rel="stylesheet" href="style_offre_emploie.css">
+<link rel="stylesheet" href="acceuil.css">
+<script type="text/javascript" src="script_offre_emploie.js"></script>
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -92,6 +94,26 @@
           </div>
           <div class="col-md-2">
             <button type="button" class="btn btn-primary" id="post">Postuler</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+      <button type="button" class="btn btn-default btn-sm">
+         <span class="glyphicon glyphicon-thumbs-up"></span> Like
+        </button>
+        <div class="dropdown">
+          <button type="button" onclick="myFunction()" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-comment"></span> Commenter
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+              <form method="post" >
+                  <p>Rentrez votre texte ici :</p>
+                  <textarea name="commenter" id="Newpublication" rows="1" cols="50" placeholder="C'est ici que ça se passe!"></textarea>
+                  <button type="button" class="btn btn-primary btn-sm" align ="right" >Commenter</button>
+                  <button type="button" class="btn btn-primary btn-sm" onclick="myFunction2(Newpublication)" align ="right" >Fermer</button>
+              </form>
           </div>
         </div>
       </div>
