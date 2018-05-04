@@ -1,0 +1,10 @@
+#jauge{
+	width: 100px;
+	position: relative;
+	left: 150px;
+	bottom: 16px;
+}
+p{
+	display: inline;
+}
+
