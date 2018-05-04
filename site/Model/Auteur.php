@@ -40,11 +40,11 @@ class Auteur extends Object {
     public function setMdp($_mdp) { $this->mdp = $_mdp; }
     public function setDesc($_desc) { $this->desc = $_desc; }
 
-    public function getNom() { return $nom; }
-    public function getPrenom() {  return $prenom; }
-    public function getMail() {  return $mail; }
-    public function getPseudo() {  return $pseudo; }
-    public function getMdp() {  return $mdp; }
-    public function getDesc() {  return $desc; }
+    public function getNom() { return $this->nom; }
+    public function getPrenom() {  return $this->prenom; }
+    public function getMail() {  return $this->mail; }
+    public function getPseudo() {  return $this->pseudo; }
+    public function getMdp() {  return $this->mdp; }
+    public function getDesc() {  return $this->desc; }
 }
 ?>

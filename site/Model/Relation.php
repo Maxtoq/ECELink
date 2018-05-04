@@ -19,8 +19,8 @@ class Relation extends Object {
     public function setId_auteur2($_id_auteur2) { $this->id_auteur2 = $_id_auteur2; }
     public function setType_rel($_type_rel) { $this->type_rel = $_type_rel; }
 
-    public function getId_auteur1() { return $id_auteur1; }
-    public function getId_auteur2() { return $id_auteur2; }
-    public function getType_rel() {  return $type_rel; }
+    public function getId_auteur1() { return $this->id_auteur1; }
+    public function getId_auteur2() { return $this->id_auteur2; }
+    public function getType_rel() {  return $this->type_rel; }
 }
 ?>

@@ -16,7 +16,7 @@ class Pro extends Auteur {
     public function setEntreprise($_entreprise) { $this->entreprise = $_entreprise; }
     public function setPoste($_poste) { $this->poste = $_poste; }
 
-    public function getEntreprise() { return $entreprise; }
-    public function getPoste() {  return $poste; }
+    public function getEntreprise() { return $this->entreprise; }
+    public function getPoste() {  return $this->poste; }
 }
 ?>

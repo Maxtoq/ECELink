@@ -13,6 +13,6 @@ class Enseignant extends Auteur {
 
     public function setMatiere($_matiere) { $this->matiere = $_matiere; }
 
-    public function getMatiere() { return $matiere; }
+    public function getMatiere() { return $this->matiere; }
 }
 ?>

@@ -22,9 +22,9 @@ class Notification extends Object {
     public function setTexte($_texte) { $this->texte = $_texte; }
     public function setLien($_lien) { $this->lien = $_lien; }
 
-    public function getId_emmetteur() { return $id_emmetteur; }
-    public function getId_recepteur() {  return $id_recepteur; }
-    public function getTexte() {  return $texte; }
-    public function getLien($_lien) { $this->lien = $_lien; }
+    public function getId_emmetteur() { return $this->id_emmetteur; }
+    public function getId_recepteur() {  return $this->id_recepteur; }
+    public function getTexte() {  return $this->texte; }
+    public function getLien($_lien) { return $this->lien; }
 }
 ?>

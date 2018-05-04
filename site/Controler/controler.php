@@ -17,6 +17,8 @@ class Controler {
     public function tryLogIn($tryPseudo, $tryMdp) {
         // On essaie de se connecter à un compte : si ça marche, user prend la valeur de l'objet Auteur correspondant ; sinon il prend "null"
         $this->user = $this->auteurManager->LogUser($tryPseudo, $tryMdp);
+        $this->user->setNom('Toq');
+        $this->auteurManager->update($this->user);
 
         // Si user est bien connecté à un compte, on retourne true
         if (!is_null($this->user)) return true;

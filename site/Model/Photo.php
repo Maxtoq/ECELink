@@ -13,6 +13,6 @@ class Photo extends Post {
 
     public function setImg($_img) { $this->img = $_img; }
 
-    public function getImg() { return $img; }
+    public function getImg() { return $this->img; }
 }
 ?>

@@ -16,7 +16,7 @@ class Offre extends Post {
     public function setType_offre($_type_offre) { $this->type_offre = $_type_offre; }
     public function setRemun($_remun) { $this->remun = $_remun; }
 
-    public function getType_offre() { return $type_offre; }
-    public function getRemun() { return $remun; }
+    public function getType_offre() { return $this->type_offre; }
+    public function getRemun() { return $this->remun; }
 }
 ?>

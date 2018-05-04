@@ -13,6 +13,6 @@ class Video extends Post {
 
     public function setVid($_vid) { $this->vid = $_vid; }
 
-    public function getVid() { return $vid; }
+    public function getVid() { return $this->vid; }
 }
 ?>

@@ -19,8 +19,8 @@ class Message extends Object {
     public function setId_recepteur($_id_recepteur) { $this->id_recepteur = $_id_recepteur; }
     public function setTexte($_texte) { $this->texte = $_texte; }
 
-    public function getId_emmetteur() { return $id_emmetteur; }
-    public function getId_recepteur() {  return $id_recepteur; }
-    public function getTexte() {  return $texte; }
+    public function getId_emmetteur() { return $this->id_emmetteur; }
+    public function getId_recepteur() {  return $this->id_recepteur; }
+    public function getTexte() {  return $this->texte; }
 }
 ?>

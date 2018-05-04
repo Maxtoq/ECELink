@@ -19,8 +19,8 @@ class Publi extends Object {
     public function setId_post($_id_post) { $this->id_post = $_id_post; }
     public function setDate_post($_date_post) { $this->date_post = $_date_post; }
 
-    public function getId_auteur() { return $id_auteur; }
-    public function getId_post() {  return $id_post; }
-    public function getDate_post() {  return $date_post; }
+    public function getId_auteur() { return $this->id_auteur; }
+    public function getId_post() {  return $this->id_post; }
+    public function getDate_post() {  return $this->date_post; }
 }
 ?>

@@ -19,8 +19,8 @@ class Commentaire extends Object {
     public function setId_post($_id_post) { $this->id_post = $_id_post; }
     public function setTexte($_texte) { $this->texte = $_texte; }
 
-    public function getId_auteur() { return $id_auteur; }
-    public function getId_post() {  return $id_post; }
-    public function getTexte() {  return $texte; }
+    public function getId_auteur() { return $this->id_auteur; }
+    public function getId_post() {  return $this->id_post; }
+    public function getTexte() {  return $this->texte; }
 }
 ?>

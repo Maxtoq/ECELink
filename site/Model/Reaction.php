@@ -19,8 +19,8 @@ class Reaction extends Object {
     public function setId_post($_id_post) { $this->id_post = $_id_post; }
     public function setType_react($_type_react) { $this->type_react = $_type_react; }
 
-    public function getId_auteur() { return $id_auteur; }
-    public function getId_post() {  return $id_post; }
-    public function getType_react() {  return $type_react; }
+    public function getId_auteur() { return $this->id_auteur; }
+    public function getId_post() {  return $this->id_post; }
+    public function getType_react() {  return $this->type_react; }
 }
 ?>

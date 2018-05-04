@@ -16,7 +16,7 @@ class Etudiant extends Auteur {
     public function setPromo($_promo) { $this->promo = $_promo; }
     public function setMaj($_maj) { $this->maj = $_maj; }
 
-    public function getPromo() { return $promo; }
-    public function getMaj() {  return $maj; }
+    public function getPromo() { return $this->promo; }
+    public function getMaj() {  return $this->maj; }
 }
 ?>

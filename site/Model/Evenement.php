@@ -22,9 +22,9 @@ class Evenement extends Object {
     public function setDesc($_desc) { $this->desc = $_desc; }
     public function setImg($_img) { $this->img = $_img; }
 
-    public function getId_auteur() { return $id_auteur; }
-    public function getDate_eve() {  return $date_eve; }
-    public function getDesc() { return $desc; }
-    public function getImg() {  return $img; }
+    public function getId_auteur() { return $this->id_auteur; }
+    public function getDate_eve() {  return $this->date_eve; }
+    public function getDesc() { return $this->desc; }
+    public function getImg() {  return $this->img; }
 }
 ?>
