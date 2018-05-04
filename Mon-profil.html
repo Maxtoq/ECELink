@@ -49,12 +49,19 @@
    </div>
  </form>
  <ul class="nav navbar-nav navbar-right">
-    <li><a  data-toggle="popover" data-placement="bottom" data-original-title="Notification" data-content="Content">
-      <button class="btn btn-lg btn-link">
-       <span class="glyphicon glyphicon-fire"></span>
-     <span class="badge badge-notify">3</span>
-    </button>
-  </a>
+    <li>
+      <div class="dropdown">
+        <button type="button" class="btn btn-lg btn-link" data-toggle="dropdown">
+          <span class="glyphicon glyphicon-fire"></span>
+        </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+          </ul>
+      </div>
+
+ 
   </li>
    <li><a href="#">M</a></li>
  </ul>
