@@ -52,9 +52,9 @@
                   </div>
                 </div>
               </div>
-
+              <?php for( $i=0;$i<10;$i++){ ?>
              <!-- Conteneur photo ami plus nom plus texte publié-->
-             <div class="row" id="mur">
+             <div class="row" id="post">
                <!--Conteneur photo-->
                <div class="col-sm-3" >
                  <div class="well" id="conteneur_photo">
@@ -69,7 +69,7 @@
                      <span class="glyphicon glyphicon-thumbs-up"></span> Like
                    </button>
                    <div class="dropdown">
-                     <button type="button" onclick="myFunction()" class="btn btn-default btn-sm">
+                     <button type="button" data-toggle="modal" data-target="#Modalcomment"  class="btn btn-default btn-sm">
                      <span class="glyphicon glyphicon-comment"></span> Commenter
                    </button>
                       <div id="myDropdown" class="dropdown-content">
@@ -84,6 +84,7 @@
                  </div>
                </div>
              </div>
+           <?php } ?>
         </div>
         </div>
         </div>
@@ -108,6 +109,29 @@
          </div>
       </div>
     </div>
+    </div>
+    </div>
+
+    <div class="modal fade" id="Modalcomment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire : </strong></h4>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         <form method="post" action="traitement.php">
+           <p>Rentrez votre texte ici :</p>
+           <textarea name="ameliorer" id="ameliorer1" rows="5" cols="50" placeholder="C'est ici que ça se passe!"></textarea>
+         </form>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary"  id="modifCv" data-dismiss="modal">Save changes</button>
+       </div>
+     </div>
     </div>
     </div>
 </div>

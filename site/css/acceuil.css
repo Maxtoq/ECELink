@@ -20,7 +20,7 @@
     display: none;
     width : 100%;
     margin-top: 30px;
-    position: absolute;
+    position: relative;
     background-color: #f1f1f1;
 
     overflow: auto;
@@ -37,13 +37,18 @@
 
 .show {
         display:block;
-        position: absolute;
+        position: relative;
         padding-left: 15px;
 
         }
 
 #photoHG{
   padding-top: 0px;
+
+}
+
+#post{
+  padding-top: 10px;
 
 }
 

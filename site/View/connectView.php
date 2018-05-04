@@ -21,11 +21,11 @@
          <form action ="index.php?action=accueil" method="post">
            <div class="form-group">
              <label for="InputPseudoco">Pseudo :</label>
-             <input type="text" class="form-control" id="InputPseudoco" autocomplete="off"  placeholder="Enter Pseudo">
+             <input type="text" class="form-control" id="InputPseudoco" autocomplete="off" name="pseudo"  placeholder="Enter Pseudo">
            </div>
            <div class="form-group">
              <label for="InputPasswordco">Password :</label>
-             <input type="password" class="form-control" id="InputPasswordco" autocomplete="off"  placeholder="Password">
+             <input type="password" class="form-control" id="InputPasswordco" name="mdp" autocomplete="off"  placeholder="Password">
            </div>
            <input type="submit" class="btn btn-primary" value="Envoyer">
          </form>
