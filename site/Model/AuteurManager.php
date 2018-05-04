@@ -12,7 +12,7 @@ class AuteurManager extends Manager {
     }
 
     public function add(Auteur $auteur) {
-
+        $q = Manager::$db->prepare();
     }
 
     public function delete(Auteur $auteur) {
@@ -63,7 +63,7 @@ class AuteurManager extends Manager {
     public function update(Auteur $auteur) {
         // On crée la requête update
         // On commence par la préparer
-        $q = Manager::$db->prepare('UPDATE auteur SET nom = :nom, prenom = :prenom, mail = :mail, pseudo = :pseudo, mdp = :mdp, descr = :descr, actif = :actif WHERE id = :id');
+        $q = Manager::$db->prepare('UPDATE '.self::AUTEUR_TABLE.' SET nom = :nom, prenom = :prenom, mail = :mail, pseudo = :pseudo, mdp = :mdp, descr = :descr, actif = :actif WHERE id = :id');
 
         // On remplit les champs de la requête
         $nom = $auteur->getNom();
@@ -84,7 +84,7 @@ class AuteurManager extends Manager {
         $q->bindParam(':id', $id, PDO::PARAM_INT);
 
         // On éxécute la requête
-        if (!$q->execute()) die("update :(");
+        $q->execute();
     }
 
     /**
