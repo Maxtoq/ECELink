@@ -4,11 +4,8 @@
  */
 class Manager {
 
+    // Lien vers la bdd
     protected static $db;
-
-    public function __construct() {
-        $this->dbConnect();
-    }
 
     /**
      * Se connecte à la base de données et récupère le PDO dans $db

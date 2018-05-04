@@ -7,38 +7,33 @@ class AuteurManager extends Manager {
     // Nom de la table
     const AUTEUR_TABLE = 'auteur';
 
-    public function __construct() {
-        parent::__construct();
-    }
-
     /**
      * Ajoute un champs dans la table
      *
-     * @param Auteur $auteur auteur à créer dans la base
+     * @param
      *
-     * @return bool true si l'ajout est une réussite, false sinon (pseudo ou mail déjà existant)
+     * @return Auteur le nouvel auteur, ou null si l'ajout est un échec
      */
-    public function add(Auteur $auteur) {
+    public function addAuteur($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr) {
         // On crée la requête insert into
         // On commence par la préparer
         $q = Manager::$db->prepare('INSERT INTO '.self::AUTEUR_TABLE.'(nom, prenom, mail, pseudo, mdp, descr, actif) VALUES(:nom, :prenom, :mail, :pseudo, :mdp, :descr, 1)');
 
         // On remplit les champs de la requête
-        $nom = $auteur->getNom();
-        $prenom = $auteur->getPrenom();
-        $mail = $auteur->getMail();
-        $pseudo = $auteur->getPseudo();
-        $mdp = $auteur->getMdp();
-        $descr = $auteur->getDescr();
-        $q->bindParam(':nom', $nom);
-        $q->bindParam(':prenom', $prenom);
-        $q->bindParam(':mail', $mail);
-        $q->bindParam(':pseudo', $pseudo);
-        $q->bindParam(':mdp', $mdp);
-        $q->bindParam(':descr', $descr);
+        $q->bindParam(':nom', $_nom);
+        $q->bindParam(':prenom', $_prenom);
+        $q->bindParam(':mail', $_mail);
+        $q->bindParam(':pseudo', $_pseudo);
+        $q->bindParam(':mdp', $_mdp);
+        $q->bindParam(':descr', $_descr);
 
-        // On éxécute la requête et on renvoie le résultat (true : réussite, false : échec)
-        return $q->execute();
+        // On éxécute la requête et on vérifie qu'elle s'est bien éxécutée
+        if ($q->execute()) {
+            // On retourne le nouvel auteur
+            return $this->getByPseudo($_pseudo);
+        }
+        // Sinon on retourne false
+        else return null;
     }
 
     public function delete(Auteur $auteur) {
@@ -65,9 +60,9 @@ class AuteurManager extends Manager {
         else return null;
     }
 
-    /*public function getByPseudo($pseudo) {
+    public function getByPseudo($pseudo) {
         // On recherche un auteur dans la table avec le pseudo demandé
-        $q = $this->db->query('SELECT * FROM '.self::AUTEUR_TABLE.' WHERE pseudo = \''.$pseudo.'\'');
+        $q = Manager::$db->query('SELECT * FROM '.self::AUTEUR_TABLE.' WHERE pseudo = \''.$pseudo.'\'');
 
         // Si la requête retourne bien un auteur
         if ($q) {
@@ -75,11 +70,11 @@ class AuteurManager extends Manager {
             $data = $q->fetch(PDO::FETCH_ASSOC);
 
             // On retourne un nouvel Auteur avec les données correspondantes
-            return new Auteur($data['id'], $data['actif'], $data['nom'], $data['prenom'], $data['mail'], $data['pseudo'], $data['mdp'], $data['desc']);
+            return new Auteur($data['id'], $data['actif'], $data['nom'], $data['prenom'], $data['mail'], $data['pseudo'], $data['mdp'], $data['descr']);
         }
         // S'il n'y a pas ce pseudo dans la base, on retourne null
-        else { return null; }
-    }*/
+        else return null;
+    }
 
     /**
      * Modifie un auteur dans la base
@@ -123,17 +118,14 @@ class AuteurManager extends Manager {
      */
     public function LogUser($tryPseudo, $tryMdp) {
         // On recherche un auteur dans la table avec le pseudo demandé
-        $q = Manager::$db->query('SELECT * FROM '.self::AUTEUR_TABLE.' WHERE pseudo = \''.$tryPseudo.'\'');
+        $user = $this->getByPseudo($tryPseudo);
 
-        // Si la requête retourne bien un auteur
-        if ($q) {
-            // On récupère le champs
-            $data = $q->fetch(PDO::FETCH_ASSOC);
-
+        // On vérifie qu'on a bien récupéré un auteur existant
+        if (!is_null($user)) {
             // Si le mot de passe est le bon
-            if ($tryMdp == $data['mdp']) {
+            if ($tryMdp == $user->getMdp()) {
                 // On retourne un nouvel Auteur avec les données correspondantes
-                return new Auteur($data['id'], $data['actif'], $data['nom'], $data['prenom'], $data['mail'], $data['pseudo'], $data['mdp'], $data['descr']);
+                return $user;
             }
             // Sinon, on retourne null
             else return null;

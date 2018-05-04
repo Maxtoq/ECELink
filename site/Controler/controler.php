@@ -1,15 +1,19 @@
 <?php
 require('Model/AuteurManager.php');
+require('Model/EtudiantManager.php');
 
 class Controler {
     // Les Manager
     private $auteurManager;
+    private $etudiantManager;
 
     // L'utilisateur
     private $user;
 
     public function __construct() {
         $this->auteurManager = new AuteurManager;
+        $this->auteurManager->dbConnect();
+        $this->etudiantManager = new EtudiantManager;
     }
 
     public function getUser() { return $this->user; }
