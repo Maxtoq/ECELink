@@ -10,28 +10,31 @@ class EtudiantManager extends AuteurManager {
     /**
      * Ajoute un champs dans la table
      *
-     * @param Etudiant $etudiant etudiant à créer dans la base
+     * @param
      *
-     * @return bool true si l'ajout est une réussite, false sinon (pseudo ou mail déjà existant)
+     * @return Etudiant le nouvel étudiant, ou null si l'ajout est un échec
      */
-    /*public function addEtudiant($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_promo, $_maj) {
-        // On crée la requête insert into
-        // On commence par la préparer
-        $q = Manager::$db->prepare('INSERT INTO '.self::ETUDIANT_TABLE.'(promo, maj, actif) VALUES(:promo, :maj, 1)');
+    public function addEtudiant($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_promo, $_maj) {
+        // On ajoute l'étudiant dans la table auteur
+        $auteur = parent::addAuteur($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr);
 
-        // On remplit les champs de la requête
-        $promo = $etudiant->getPromo();
-        $maj = $etudiant->getmaj();
-        $q->bindParam(':maj', $maj);
-        $q->bindParam(':maj', $maj);
+        // Si l'ajout d'un auteur est un succès
+        if (!is_null($auteur)) {
+            // On crée la requête insert into
+            // On commence par la préparer
+            $q = Manager::$db->prepare('INSERT INTO '.self::ETUDIANT_TABLE.'(id, promo, maj, actif) VALUES(:id, :promo, :maj, 1)');
 
-        // On éxécute la requête et on renvoie le résultat (true : réussite, false : échec)
-        return $q->execute();
+            // On remplit les champs de la requête
+            $id = $auteur->getId();
+            $q->bindParam(':id', $id);
+            $q->bindParam(':promo', $_promo);
+            $q->bindParam(':maj', $_maj);
 
-        // On récupère l'id de la table
-
-        // On ajoute également l'étudiant dans la table auteur
-        parent::addAuteur(new Auteur());
-    }*/
+            // On éxécute la requête et on 
+            $q->execute();
+        }
+        // Sinon, on renvoie null
+        else return null;
+    }
 }
 ?>
