@@ -2,6 +2,7 @@
 require('Controler/controler.php');
 
 $controler = new Controler;
+$connected = false;
 
 if (isset($_GET['action'])) {
     if ($_GET['action'] == 'accueil') {
@@ -9,18 +10,21 @@ if (isset($_GET['action'])) {
         $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
     	$mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
     	if (($pseudo != "") && ($mdp != "")) {
-            $controler->tryLogIn($pseudo, $mdp);
+            // On tente de se connecter avec les identifiants
+            // Si la connexion est réussie, on met connected à true, sinon à false
+            $connected = $controler->tryLogIn($pseudo, $mdp);
 
-            $controler->getAccueil();
+            if ($connected) $controler->getAccueil();
+            else  $controler->getLogIn();
     	}
     	else {
-            $controler->LogIn();
+            $controler->getLogIn();
     	}
 
 
     }
 }
 else {
-    $controler->LogIn();
+    $controler->getLogIn();
 }
 ?>
