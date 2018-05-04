@@ -11,8 +11,34 @@ class AuteurManager extends Manager {
         parent::__construct();
     }
 
+    /**
+     * Ajoute un champs dans la table
+     *
+     * @param Auteur $auteur auteur à créer dans la base
+     *
+     * @return bool true si l'ajout est une réussite, false sinon (pseudo ou mail déjà existant)
+     */
     public function add(Auteur $auteur) {
-        $q = Manager::$db->prepare();
+        // On crée la requête insert into
+        // On commence par la préparer
+        $q = Manager::$db->prepare('INSERT INTO '.self::AUTEUR_TABLE.'(nom, prenom, mail, pseudo, mdp, descr, actif) VALUES(:nom, :prenom, :mail, :pseudo, :mdp, :descr, 1)');
+
+        // On remplit les champs de la requête
+        $nom = $auteur->getNom();
+        $prenom = $auteur->getPrenom();
+        $mail = $auteur->getMail();
+        $pseudo = $auteur->getPseudo();
+        $mdp = $auteur->getMdp();
+        $descr = $auteur->getDescr();
+        $q->bindParam(':nom', $nom);
+        $q->bindParam(':prenom', $prenom);
+        $q->bindParam(':mail', $mail);
+        $q->bindParam(':pseudo', $pseudo);
+        $q->bindParam(':mdp', $mdp);
+        $q->bindParam(':descr', $descr);
+
+        // On éxécute la requête et on renvoie le résultat (true : réussite, false : échec)
+        return $q->execute();
     }
 
     public function delete(Auteur $auteur) {
