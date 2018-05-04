@@ -2,7 +2,11 @@
 <?php $title = 'ECELink - Accueil'; ?>
 
 <!-- Stylesheet et scripts à inclure -->
-<?php $include = '' ?>
+<?php ob_start(); ?>
+<link rel="stylesheet" type = "text/css" href ="acceuil.css">
+<script type="text/javascript" src ="View/connexion.js"></script>
+<?php $include = ob_get_clean(); ?>
+<?php ob_end_flush(); ?>
 
 <!-- Content -->
 <?php ob_start(); ?>

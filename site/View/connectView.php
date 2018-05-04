@@ -3,8 +3,8 @@
 
 <!-- Stylesheet et scripts à inclure -->
 <?php ob_start(); ?>
-<link rel="stylesheet" type = "text/css" href ="View/connexion.css">
-<script type="text/javascript" src ="View/connexion.js"></script>
+<link rel="stylesheet" type = "text/css" href ="css/connexion.css">
+<script type="text/javascript" src ="js/connexion.js"></script>
 <?php $include = ob_get_clean(); ?>
 <?php ob_end_flush(); ?>
 
