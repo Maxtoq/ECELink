@@ -1,0 +1,59 @@
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 10px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+
+    align-items: right;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.show {display:block;}
+
+#photoHG{
+  padding-top: 0px;
+
+}
+
+#conteneur_photo{
+  text-align: center;
+  margin: 0;
+  padding : 10px;
+}
+
+button, .buttonpubli{
+	float : right; /* Place le bouton publi a gauche quand appele*/
+}
+
+textarea[name=publication] {
+  resize: none;
+}
+
+#boutongo{
+	margin-top: 0px;
+	float : right;
+}
+
+.panel-body{
+	text-align: left;
+	padding-top: 5px;
+  padding-bottom: 5px;
+}
