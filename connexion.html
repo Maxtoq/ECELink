@@ -23,25 +23,6 @@
 
 jQuery("#SelectMajeur option:first-child").attr("selected", true);
 
-
-
-function Check() {
-    if (document.getElementById('RadioEtudiant').checked) {
-        document.getElementById('ifYes').style.display= 'block';
-    }
-    else document.getElementById('ifYes').style.display ='none';
-
-    if (document.getElementById('RadioProf').checked) {
-        document.getElementById('ifYes1').style.display= 'block';
-    }
-    else document.getElementById('ifYes1').style.display ='none';
-
-    if (document.getElementById('RadioPro').checked) {
-        document.getElementById('ifYes2').style.display= 'block'
-    }
-    else document.getElementById('ifYes2').style.display ='none';
-}
-
 </script>
 <body>
 
@@ -159,7 +140,7 @@ function Check() {
              <div class="reveal-if-active" id="ifYes"  style="display:none">
                <label for="SelectMajeur">Votre Majeur :</label>
                <select class="form-control" id="SelectMajeur" >
-                 <option value="" disabled selected>Choississez ici :</option>
+                 <option value="">Choississez ici :</option>
                  <option value ="SE">SE</option>
                  <option value ="SI">SI</option>
                  <option value ="OCRES">OCRES</option>
@@ -178,7 +159,7 @@ function Check() {
                  <option value ="Autres">Autres</option>
                </select>
              </div>
-             <div class="reveal-if-active" id="ifYes1"  style="display:none">
+             <div class="reveal-if-active" id="ifYes1"   style="display:none">
                <label for="InputMatiere">Qu'elle est votre Matière ?</label>
                <input type="text" class="form-control" id="InputMatiere" name="Matiere" autocomplete="off" placeholder="Matière">
              </div>
