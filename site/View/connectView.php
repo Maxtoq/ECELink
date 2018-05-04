@@ -1,5 +1,10 @@
-<?php $title = 'ECELink - Login'; ?>
+<!-- Titre de la page -->
+<?php $title = 'ECELink - Connexion'; ?>
 
+<!-- Stylesheet et scripts à inclure -->
+<?php $include = '' ?>
+
+<!-- Content -->
 <?php ob_start(); ?>
 <form action="index.php?action=accueil" method="post">
     <table>
@@ -18,4 +23,5 @@
 </form>
 <?php $content = ob_get_clean(); ?>
 
+<!-- On appelle le template -->
 <?php require('template.php') ?>
