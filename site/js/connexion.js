@@ -1,3 +1,11 @@
+jQuerry(document).ready(function(){
+  $("#SelectMajeur").val("");
+  $("#SelectPromo").val($("#SelectPromor option:first"));
+});
+
+jQuery("#SelectMajeur option:first-child").attr("selected", true);
+
+
 
 function Check() {
     if (document.getElementById('RadioEtudiant').checked) {
