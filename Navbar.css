@@ -27,11 +27,11 @@
 /*#footer, .page-wrap:after {
   height: 142px;
 }*/
-#footer {
-  width: 100%;
+.footer-distributed {
+ width: 100%;
  margin: auto;
- position: absolute;
- bottom: 0px;
+ position: relative;
+
  border: solid 1px #336699;
 }
 
