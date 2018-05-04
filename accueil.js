@@ -19,10 +19,11 @@ $(document).ready(function(){
 });
 
 
-
+$(document).ready(function(){
 function myFunction() {
     alert("yes");
     document.getElementById("myDropdown").classList.toggle("show");
+};
 };
 
 function myFunction2() {

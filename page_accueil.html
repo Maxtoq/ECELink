@@ -24,9 +24,10 @@ toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-function myFunction2() {
+function myFunction2(element) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
+    element.value ='';
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
@@ -144,8 +145,8 @@ function myFunction2() {
       <img src="Saddam-southpark.png" class="img-circle"  height="70" width="70" alt="Avatar"  >
     </div>
    </div>
-   <div class="col-sm-9">
-     <div class="well">
+   <div class="col-sm-9" id="contpubli">
+     <div class="well" >
        <p> Satan and I finnaly broke up, feeling blue :'(</p>
        <button type="button" class="btn btn-default btn-sm">
          <span class="glyphicon glyphicon-thumbs-up"></span> Like
@@ -157,9 +158,9 @@ function myFunction2() {
           <div id="myDropdown" class="dropdown-content">
               <form method="post" action="traitement.php">
                   <p>Rentrez votre texte ici :</p>
-                  <textarea name="commenter" id="Newpublication" rows="5" cols="50"> C'est ici que ça se passe!</textarea>
+                  <textarea name="commenter" id="Newpublication" rows="1" cols="50" placeholder="C'est ici que ça se passe!"></textarea>
                   <button type="button" class="btn btn-primary btn-sm" align =right >Commenter</button>
-                  <button type="button" class="btn btn-primary btn-sm" onclick="myFunction2()" align =right >Fermer</button>
+                  <button type="button" class="btn btn-primary btn-sm" onclick="myFunction2(Newpublication)" align =right >Fermer</button>
               </form>
             </div>
         </div>
