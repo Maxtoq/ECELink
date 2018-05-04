@@ -14,7 +14,7 @@ class EtudiantManager extends AuteurManager {
      *
      * @return bool true si l'ajout est une réussite, false sinon (pseudo ou mail déjà existant)
      */
-    public function addEtudiant(Etudiant $etudiant) {
+    /*public function addEtudiant($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_promo, $_maj) {
         // On crée la requête insert into
         // On commence par la préparer
         $q = Manager::$db->prepare('INSERT INTO '.self::ETUDIANT_TABLE.'(promo, maj, actif) VALUES(:promo, :maj, 1)');
@@ -32,6 +32,6 @@ class EtudiantManager extends AuteurManager {
 
         // On ajoute également l'étudiant dans la table auteur
         parent::addAuteur(new Auteur());
-    }
+    }*/
 }
 ?>
