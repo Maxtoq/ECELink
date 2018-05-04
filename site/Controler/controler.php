@@ -31,7 +31,7 @@ class Controler {
     public function getAccueil() {
         require('/accueilView.php');
     }
-    
+
     public function getLogIn() {
         require('/connectView.php');
     }

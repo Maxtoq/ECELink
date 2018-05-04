@@ -75,6 +75,8 @@ class AuteurManager extends Manager {
         $q->bindValue(':actif', $auteur->getActif(), PDO::PARAM_INT);
         $q->bindValue(':id', $auteur->getNom(), PDO::PARAM_INT);
 
+        // On éxécute la requête
+        $q->execute();
     }
 
     /**
