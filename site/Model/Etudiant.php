@@ -6,8 +6,8 @@ class Etudiant extends Auteur {
     private $promo;
     private $maj;
 
-    public function __construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_desc, $_promo, $_maj) {
-        parent::__construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_desc);
+    public function __construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_promo, $_maj) {
+        parent::__construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr);
 
         $this->setPromo($_promo);
         $this->setMaj($_maj);

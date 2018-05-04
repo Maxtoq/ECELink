@@ -30,11 +30,16 @@ class EtudiantManager extends AuteurManager {
             $q->bindParam(':promo', $_promo);
             $q->bindParam(':maj', $_maj);
 
-            // On éxécute la requête et on 
+            // On éxécute la requête
             $q->execute();
+
+            // On retourne le nouvel étudiant
+            return new Etudiant($id, 1, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_promo, $_maj);
         }
         // Sinon, on renvoie null
         else return null;
     }
+
+
 }
 ?>

@@ -6,8 +6,8 @@ class Pro extends Auteur {
     private $entreprise;
     private $poste;
 
-    public function __construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_desc, $_entreprise, $_poste) {
-        parent::__construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_desc);
+    public function __construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_entreprise, $_poste) {
+        parent::__construct($_id, $_actif, $_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr);
 
         $this->setEntreprise($_entreprise);
         $this->setPoste($_poste);
