@@ -3,8 +3,8 @@
 
 <!-- Stylesheet et scripts à inclure -->
 <?php ob_start(); ?>
-  <link rel="stylesheet" type = "text/css" href="css/style_reseau.css">
-  <script type="text/javascript" src="js/script_reseau.js"></script>
+ <link rel="stylesheet" type = "text/css" href="css/style_reseau.css">
+ <script type="text/javascript" src="js/script_reseau.js"></script>
 <?php $include = ob_get_clean(); ?>
 <?php ob_end_flush(); ?>
 
@@ -70,7 +70,7 @@
         <div class="col-md-10 " id="waouf1" >
           <div class="col-md-3 " >
             <img src="img/mickey.jpg" class="img-circle" id="photo" height="70" width="70" alt="Avatar">
-            <p class="nom">Clément Pécresse</p>
+            <p class="nom">Clément Pecresse</p>
           </div>
           <div class="col-md-1">
           </div>
@@ -78,7 +78,7 @@
             <p class="etud">Etudiant</p></br></br>
             <div class="row">
             <div class="col-md-8">
-              <p class="etuddesc"> ECE Paris, tié tié la famille</p>
+              <p class="etuddesc"> ECE Paris</p>
             </div>
             <div class="col-md-4">
               <button type="button"  class="btn btn-primary btn-xs" id="but1">Supp</button></br>
@@ -109,7 +109,7 @@
             <p class="etud">Etudiant</p></br></br>
             <div class="row">
             <div class="col-md-8">
-              <p class="etuddesc"> ECE Paris, tié tié la famille</p>
+              <p class="etuddesc"> ECE Paris</p>
             </div>
             <div class="col-md-4">
               <button type="button" class="btn btn-primary btn-xs" id="but2">Supp</button></br>
@@ -129,7 +129,7 @@
         <div class="col-md-10 " id="waouf3">
           <div class="col-md-3 ">
             <img src="img/mickey.jpg" class="img-circle" id="photo" height="70" width="70" alt="Avatar">
-            <p class="nom"> rocko sifredi</p>
+            <p class="nom"> Thomas Wurhlin</p>
           </div>
           <div class="col-md-1">
           </div>
@@ -137,7 +137,7 @@
             <p class="etud">Etudiant</p></br></br>
             <div class="row">
             <div class="col-md-8">
-              <p class="etuddesc"> ECE Paris, tié tié la famille</p>
+              <p class="etuddesc"> ECE Paris</p>
             </div>
             <div class="col-md-4">
               <button type="button" class="btn btn-primary btn-xs" id="but3">Supp</button></br>

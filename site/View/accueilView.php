@@ -15,7 +15,7 @@
             <div class="col-sm-2 well">
                 <div class="well" id="photoHG">
                     <!-- Ecriture sous profil en haut a gauche -->
-                    <h5 style ="color:#3277b3;"><a href="index.php?action=monprofil"><?= $this->user->getPrenom().' '.$this->user->getNom() ?></a></h5>
+                    <h5 style ="color:#3277b3;"><a href="index.php?action=monProfil"><?= $this->user->getPrenom().' '.$this->user->getNom() ?></a></h5>
                     <a href="index.php?action=monprofil"><img src="img/mickey.jpg" class="img-circle" height="80" width="80" alt="Avatar"></a>
                 </div>
 
@@ -117,7 +117,7 @@
     <div class="modal-dialog" role="document">
      <div class="modal-content">
        <div class="modal-header">
-         <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire du post <?php echo $i++?>: </strong></h4>
+         <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire du post <?php echo $i?>: </strong></h4>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <span aria-hidden="true">&times;</span>
          </button>

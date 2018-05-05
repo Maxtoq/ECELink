@@ -2,6 +2,7 @@
 /*supprimer du reseau*/
 $(document).ready(function(){
     $("#but1").click(function(){
+        alert('p');
         $("#waouf1").remove();
     });
 });
