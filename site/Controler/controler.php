@@ -32,6 +32,7 @@ class Controler {
     public function getUser() { return $this->user; }
     public function getUserType() { return $this->userType; }
     public function getConnected() { return $this->connected; }
+    public function getPostManager() { return $this->postManager; }
 
     /**
      * Tente de se connecter à un compte Auteur avec le pseudo et le mdp
@@ -71,6 +72,10 @@ class Controler {
     public function signProIn($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_entreprise, $_poste) {
         $this->user = $this->proManager->addPro($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_entreprise, $_poste);
         if (!is_null($this->user)) $this->connected = true;
+    }
+
+    public function publiPost($texte) {
+        $this->postManager->addPost($this->user->getId(), $texte);
     }
 
     public function getLoad() {

@@ -159,7 +159,7 @@ if (isset($_GET['action'])) {
     elseif ($_GET['action'] == 'reseau') {
         // Si on est déjà connecté
         if ($controler->getConnected()) {
-            // On charge la page monProfil
+            // On charge la page réseau
             goPage('RESEAU');
         }
         else {
@@ -170,7 +170,7 @@ if (isset($_GET['action'])) {
     elseif ($_GET['action'] == 'emplois') {
         // Si on est déjà connecté
         if ($controler->getConnected()) {
-            // On charge la page monProfil
+            // On charge la page emplois
             goPage('EMPLOIS');
         }
         else {
@@ -181,7 +181,7 @@ if (isset($_GET['action'])) {
     elseif ($_GET['action'] == 'profil') {
         // Si on est déjà connecté
         if ($controler->getConnected()) {
-            // On charge la page monProfil
+            // On charge la page profil
             goPage('PROFIL');
         }
         else {
@@ -192,23 +192,33 @@ if (isset($_GET['action'])) {
     elseif ($_GET['action'] == 'messages') {
         // Si on est déjà connecté
         if ($controler->getConnected()) {
-            // On charge la page monProfil
+            // On charge la page messages
             goPage('MESSAGES');
         }
-        else {
-            goPage('LOGIN');
-        }
+        else goPage('LOGIN');
     }
     // On cherche à se déconnecter
     elseif ($_GET['action'] == 'deco') {
         // Si on est déjà connecté
         if ($controler->getConnected()) {
-            // On charge la page monProfil
             // On supprime les données de la session
             session_destroy();
             // On recharge la première page
             header("Refresh:0; url = index.php");
         }
+    }
+    // On cherche à publier un post
+    elseif ($_GET['action'] == 'publiPost') {
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On vérifie que le textArea est rempli
+            $texte = isset($_POST["publi"]) ? $_POST["publi"] : "";
+            if ($texte != "") {
+                $controler->publiPost($texte);
+        	}
+            goPage('ACCUEIL');
+        }
+        else goPage('LOGIN');
     }
 }
 else {
