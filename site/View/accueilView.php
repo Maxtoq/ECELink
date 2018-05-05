@@ -69,7 +69,7 @@
                      <span class="glyphicon glyphicon-thumbs-up"></span> Like
                    </button>
                    <div class="dropdown">
-                     <button type="button" data-toggle="modal" data-target="#Modalcomment"  class="btn btn-default btn-sm">
+                     <button type="button" id ="<?php echo($i) ?>" data-toggle="modal" data-target="#Modalcomment"  class="btn btn-default btn-sm">
                      <span class="glyphicon glyphicon-comment"></span> Commenter
                    </button>
                       <div id="myDropdown" class="dropdown-content">
@@ -111,8 +111,6 @@
     </div>
     </div>
     </div>
-
-    <button id="<?php echo($i) ?>" class="btnContact btn btn-success btn-3d btn-xs"><i class="fa fa-envelope-o"></i>
 
     <div class="modal fade" id="Modalcomment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
