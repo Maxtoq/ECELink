@@ -1,39 +1,10 @@
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 10px;
-    font-size: 10px;
-    border: none;
-    cursor: pointer;
-}
 
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-}
 
-.dropdown {
-
-    align-items: right;
-}
-
-.dropdown-content {
-    display: none;
-    width : 100%;
-    margin-top: 30px;
-    position: relative;
-    background-color: #f1f1f1;
-
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
 
 #contpubli{
    position: relative;
 }
-#contpubli, .dropdown-content{
 
-}
 
 .show {
         display:block;
@@ -44,14 +15,14 @@
 
 #photoHG{
   padding-top: 0px;
-
 }
 
+/*réhausse de 10px à l'intérieur du block*/
 #post{
   padding-top: 10px;
 
 }
-
+/*aligne le texte au centre et réhausse le texte de 10pixels*/
 #conteneur_photo{
   text-align: center;
   margin: 0;
@@ -66,7 +37,7 @@ textarea {
   resize: none;
 
 }
-
+/*bouton reste à 0 pixel et place le bouton j'aime à droite*/
 #boutongo{
 	margin-top: 0px;
 	float : right;

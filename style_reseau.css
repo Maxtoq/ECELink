@@ -4,33 +4,25 @@
     flex-direction: column;
 
 }
-
-
-#yala1{
+.yala1{
 	position: relative;
 	right:10px;
-
 }
-#yala2{
+.yala2b {
 	position: relative;
 	right:10px;
-	margin-top: 5px;
-
 }
-#yala3{
+.yala3{
 	position: relative;
 	right:10px;
-	margin-top: 5px;
 }
-#yala4{
+.yala4{
 	position: relative;
 	right:10px;
-	margin-top: 5px;
 }
-#yala5{
+.yala5{
 	position: relative;
 	right:10px;
-	margin-top: 5px;
 }
 #photo1{
 	position: relative;
@@ -51,7 +43,7 @@ p{
 	width: 100px;
 	height: 18px;
 	position: relative;
-
+	
 	left: 10px;
 
 }
@@ -74,7 +66,7 @@ p{
 }
 
 #photo{
-
+	
 	text-align: center;
 	position: relative;
 	top:6px;
@@ -94,39 +86,20 @@ p{
 }
 #but1{
 	position: relative;
-	padding-top: 5px;
 	bottom: 30px;
 }
 #but2{
 	position: relative;
-	padding-top: 5px;
 	bottom: 30px;
 }
 #but3{
 	position: relative;
-	padding-top: 5px;
 	bottom: 30px;
 }
-#bu1{
-	margin-top: 5px;
+#bu{
 	position: relative;
-	padding-top: 5px;
 	bottom: 30px;
 }
-
-#bu2{
-	margin-top: 5px;
-	position: relative;
-	padding-top: 5px;
-	bottom: 30px;
-}
-#bu3{
-	margin-top: 5px;
-	position: relative;
-	padding-top: 5px;
-	bottom: 30px;
-}
-
 #waouf3{
 	border:solid 1px #C0C0C0;
 	border-radius: 10px;

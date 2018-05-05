@@ -1,7 +1,8 @@
+/*place les diifférentes images du fichiers messages.php à l'intérieur du block de 25 pixels*/
 img-circle{
 	padding:  25px;
 }
-
+/* le formulaire va se placer à droite du div dans lequel il se situe*/
 form button{
 
 	float: right;

@@ -1,12 +1,15 @@
+/*le div well se place à 10pixel du bloc exterieur*/
 .well{
 	margin-top: 10px;
 }
+/*les boutons se placent à droite de la colonne et 10 pixels au dessus de sa position initiale*/
 button{
 	float: right;
 	position: relative;
 	bottom: 10px;
 }
 
+/*le div well se place à 10pixel endessous de sa position initiale*/
 #pasmal{
 	position: relative;
 	top:30px;
