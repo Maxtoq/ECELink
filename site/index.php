@@ -84,13 +84,20 @@ if (isset($_GET['action'])) {
     }
     // On cherche à s'inscrire
     elseif ($_GET['action'] == 'new') {
-        // Si on est déjà connecté
-        if ($controler->getConnected()) {
-            // On charge la page monProfil
-            goPage('MONPROFIL');
+        // Si on est pas connecté
+        if (!$controler->getConnected()) {
+            $nom = isset($_POST["nom"]) ? $_POST["nom"] : "";
+            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
+            $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
+            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
+            $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
+            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
+            $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
+            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
+            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
         }
         else {
-            goPage('LOGIN');
+            goPage('ACCUEIL');
         }
     }
     // On cherche à aller sur la page monProfil

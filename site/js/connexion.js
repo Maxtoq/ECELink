@@ -8,17 +8,17 @@ jQuery("#SelectMajeur option:first-child").attr("selected", true);
 
 
 function Check() {
-    if (document.getElementById('RadioEtudiant').checked) {
+    if (document.getElementById('etu').checked) {
         document.getElementById('ifYes').style.display= 'block';
     }
     else document.getElementById('ifYes').style.display ='none';
 
-    if (document.getElementById('RadioProf').checked) {
+    if (document.getElementById('ens').checked) {
         document.getElementById('ifYes1').style.display= 'block';
     }
     else document.getElementById('ifYes1').style.display ='none';
 
-    if (document.getElementById('RadioPro').checked) {
+    if (document.getElementById('pro').checked) {
         document.getElementById('ifYes2').style.display= 'block'
     }
     else document.getElementById('ifYes2').style.display ='none';
