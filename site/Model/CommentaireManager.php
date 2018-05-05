@@ -88,7 +88,7 @@ class CommentaireManager extends Manager {
      *
      * @param  Commentaire $comm comm à modifier
      */
-    public function update(Commentaire $comm) {
+    /*public function update(Commentaire $comm) {
         // On crée la requête update
         // On commence par la préparer
         if (is_null(Manager::$db)) parent::dbConnect();
@@ -106,6 +106,6 @@ class CommentaireManager extends Manager {
 
         // On éxécute la requête
         $q->execute();
-    }
+    }*/
 }
 ?>
