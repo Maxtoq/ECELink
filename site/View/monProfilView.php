@@ -17,7 +17,7 @@
      <div class ="row">
        <div class="col-md-4 ">
          <div class="well">
-           <img src="mickey.jpg" class="img-circle" height="100" width="100"  alt="Avatar" id="PP">
+           <img src="img/mickey.jpg" class="img-circle" height="100" width="100"  alt="Avatar" id="PP">
            <div class = "buttonpp">
              <button type="button" class="btn1" data-toggle="modal" data-target="#exampleModal" id="buttonpp" >Modifier</button>
            </div>
