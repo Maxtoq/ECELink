@@ -50,8 +50,8 @@ if (isset($_GET['action'])) {
         else {
             // On récupère les inputs du formulaire
             $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
-        	$mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
-        	if (($pseudo != "") && ($mdp != "")) {
+            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
+            if (($pseudo != "") && ($mdp != "")) {
                 // On tente de se connecter avec les identifiants
                 // Si la connexion est réussie, on met connected à true, sinon à false
                 $controler->tryLogIn($pseudo, $mdp);
