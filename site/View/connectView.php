@@ -58,11 +58,11 @@
          </div>
          <div class="form-group">
            <label for="InputPassword1">Mot de passe :</label>
-           <input type="password" class="form-control" name="mdp" autocomplete="off"  placeholder="Password">
+           <input type="password" class="form-control" name="mdp1" autocomplete="off"  placeholder="Password">
          </div>
          <div class="form-group">
            <label for="InputPassword2">Confirmer Mot de Passe :</label>
-           <input type="password" class="form-control" name="mdp" autocomplete="off"  placeholder="Password">
+           <input type="password" class="form-control" name="mdp2" autocomplete="off"  placeholder="Password">
          </div>
          <div class="form-group">
            <label for="Desc">Description Personnelle :</label>

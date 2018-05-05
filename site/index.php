@@ -87,11 +87,11 @@ if (isset($_GET['action'])) {
         // Si on est pas connecté
         if (!$controler->getConnected()) {
             $nom = isset($_POST["nom"]) ? $_POST["nom"] : "";
-            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
+            $prenom = isset($_POST["prenom"]) ? $_POST["prenom"] : "";
+            $mail = isset($_POST["mail"]) ? $_POST["mail"] : "";
             $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
-            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
-            $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
-            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
+            $mdp1 = isset($_POST["mdp1"]) ? $_POST["mdp1"] : "";
+            $mdp2 = isset($_POST["mdp2"]) ? $_POST["mdp2"] : "";
             $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
             $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
             $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
