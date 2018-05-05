@@ -24,18 +24,15 @@
        </div>
        <div class="col-md-8 well">
          <ul>
-               <li ><strong style ="color:#3277b3;">Nom :</strong> Mickey</li>
-               <li><strong style ="color:#3277b3;">Prenom :</strong>Mouse</li>
-               <li><strong style ="color:#3277b3;">Promo :</strong>666</li>
-               <li><strong style ="color:#3277b3;">Majeur :</strong>Se</li>
-               <li><strong style ="color:#3277b3;">Mineur :</strong>Ingenieurie Financière</li>
+               <li ><strong style ="color:#3277b3;">Nom : </strong><?= $this->user->getNom() ?></li>
+               <li><strong style ="color:#3277b3;">Prenom : </strong><?= $this->user->getPrenom() ?></li>
          </ul>
          <div class="row">
                <div class="panel panel-primary">
                    <div class="panel-heading">
                        <h3 class="panel-title" align=left >Description Personnelle :</h3>
                    </div>
-                   <div class="panel-body" > <p id="CV"> mes loisirs, mes sports et mes activités favorites </p>
+                   <div class="panel-body" > <p id="CV"><?= $this->user->getDescr() ?></p>
                         <div class="buttonmodif" id="button_modif">
                           <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalpubliCV"  align ="right" >Modifier</button>
                         </div>
