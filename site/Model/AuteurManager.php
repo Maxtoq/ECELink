@@ -77,6 +77,22 @@ class AuteurManager extends Manager {
         else return null;
     }
 
+    public function findUserType(Auteur $user) {
+        // On recherche dans les tables etudiant, enseignant et pro le champs correspondant au user
+        if (is_null(Manager::$db)) parent::dbConnect();
+        $q = Manager::$db->query('SELECT * FROM etudiant WHERE id = '.$user->getId());
+        // Si la requête retourne un étudiant, on renvoie 'ETUDIANT'
+        if ($q) return 'ETUDIANT';
+
+        $q = Manager::$db->query('SELECT * FROM enseignant WHERE id = '.$user->getId());
+        // Si la requête retourne un enseignant, on renvoie 'ENSEIGNANT'
+        if ($q) return 'ENSEIGNANT';
+
+        $q = Manager::$db->query('SELECT * FROM pro WHERE id = '.$user->getId());
+        // Si la requête retourne un pro, on renvoie 'PRO'
+        if ($q) return 'PRO';
+    }
+
     /**
      * Modifie un auteur dans la base
      *
@@ -115,7 +131,7 @@ class AuteurManager extends Manager {
      * @param string $tryPseudo pseudo à rechercher dans la base
      * @param string $tryMdp    mot de passe du user
      *
-     * @return l'auteur correspondant à la connexion, ou null si le pseudo ou le mdp est mauvais
+     * @return Auteur l'auteur correspondant à la connexion, ou null si le pseudo ou le mdp est mauvais
      */
     public function LogUser($tryPseudo, $tryMdp) {
         // On recherche un auteur dans la table avec le pseudo demandé

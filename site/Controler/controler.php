@@ -13,6 +13,8 @@ class Controler {
 
     // L'utilisateur
     private $user;
+    // Type de user
+    private $userType;
     // Le booleen de connexion
     private $connected;
 
@@ -25,6 +27,7 @@ class Controler {
     }
 
     public function getUser() { return $this->user; }
+    public function getUserType() { return $this->userType; }
     public function getConnected() { return $this->connected; }
 
     /**
@@ -39,11 +42,17 @@ class Controler {
     public function tryLogIn($tryPseudo, $tryMdp) {
         // On essaie de se connecter à un compte : si ça marche, user prend la valeur de l'objet Auteur correspondant ; sinon il prend "null"
         $this->user = $this->auteurManager->LogUser($tryPseudo, $tryMdp);
-        $this->enseignantManager->addEnseignant('Tournesol', 'Kévin','kevtourn@ece.fr','kevdu56','kevin1978','bjr moi c kev','Imitation de Gérard Jugnot');
-        $this->proManager->addPro('Musk','Ellon','ellonkikou@gmail.com','KingdomDestroyer','ellon123','slt les copains, vous voulez voir mon lance-flamme ?', 'SpaceX','le boss');
 
-        // Si user est bien connecté à un compte, on met connected à true
-        if (!is_null($this->user)) $this->connected = true;
+        // Si user s'est bien connecté à un compte
+        if (!is_null($this->user))  {
+            // On met connected à true
+            $this->connected = true;
+
+            // On cherche de quel type est le user
+            $this->userType = $this->auteurManager->findUserType($this->user);
+            // A RETIRER
+            die($this->getUserType());
+        }
         // Sinon on met connected à false
         else $this->connected = false;
     }
