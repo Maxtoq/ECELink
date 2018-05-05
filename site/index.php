@@ -220,6 +220,19 @@ if (isset($_GET['action'])) {
         }
         else goPage('LOGIN');
     }
+    // On cherche à publier un commentaire
+    elseif ($_GET['action'] == 'publiComm') {
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On vérifie que le textArea est rempli
+            $texte = isset($_POST["publi"]) ? $_POST["publi"] : "";
+            if ($texte != "") {
+                $controler->publiPost($texte);
+        	}
+            goPage('ACCUEIL');
+        }
+        else goPage('LOGIN');
+    }
 }
 else {
     goPage('LOGIN');

@@ -84,19 +84,9 @@
                              <span class="glyphicon glyphicon-thumbs-up"></span> Like
                          </button>
                         <!--panel pour notre mur ses publi etc-->
-                   <div class="dropdown">
                      <button type="button" data-toggle="modal"  data-target="#message<?php echo $data['id'];?>" class="btn btn-default btn-sm">
                      <span class="glyphicon glyphicon-comment"></span> Commenter
                    </button>
-                      <div id="myDropdown" class="dropdown-content">
-                          <form method="post" action="traitement.php">
-                              <p>Rentrez votre texte ici :</p>
-                              <textarea name="commenter" id="Newpublication" rows="1" cols="50" placeholder="C'est ici que ça se passe!"></textarea>
-                              <button type="button" class="btn btn-primary btn-sm" align ="right" >Commenter</button>
-                              <button type="button" class="btn btn-primary btn-sm" onclick="myFunction2(Newpublication)" align ="right" >Fermer</button>
-                          </form>
-                        </div>
-                    </div>
                  </div>
                </div>
              </div>
@@ -105,22 +95,24 @@
              <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire du post <?= $data['id']?>: </strong></h4>
+                  <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire : </strong></h4>
+
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <form method="post" action="traitement.php">
-                    <p>Rentrez votre texte ici :</p>
-                    <textarea name="ameliorer" id="to" rows="5" cols="50" placeholder="C'est ici que ça se passe!"></textarea>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary"  id="modifCv" data-dismiss="modal">Save changes</button>
-                </div>
-              </div>
+
+                <form action="index.php?action=publiComm&id=<?= $data['id'] ?>" method="post">
+                  <div class="modal-body">
+                        <p>Rentrez votre texte ici :</p>
+                        <textarea name="comm" id="to" rows="5" cols="50" placeholder="C'est ici que ça se passe!"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary"  id="modifCv" value="Commenter">
+                  </div>
+                </form>
+               </div>
              </div>
              </div>
            <?php } ?>
