@@ -1,3 +1,8 @@
+function go(id){
+    alert('le bouton est : ' + id)
+}
+
+
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }

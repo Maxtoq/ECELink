@@ -69,7 +69,7 @@
                      <span class="glyphicon glyphicon-thumbs-up"></span> Like
                    </button>
                    <div class="dropdown">
-                     <button type="button" id ="<?php echo($i) ?>" data-toggle="modal" data-target="#Modalcomment"  class="btn btn-default btn-sm">
+                     <button type="button" data-toggle="modal"  data-target="#<?php echo $i?>" class="btn btn-default btn-sm">
                      <span class="glyphicon glyphicon-comment"></span> Commenter
                    </button>
                       <div id="myDropdown" class="dropdown-content">
@@ -96,6 +96,7 @@
         <h3 class="panel-title" align="left" >Suggestions :</h3>
       </div>
       <div class="panel-body">
+        <?php for( $i=0;$i<6;$i++){ ?>
          <div class="panel panel-info">
            <div class="panel-heading">
           <h5 class="panel-title" align="left" >Offre d'emploi :</h5>
@@ -104,19 +105,20 @@
             <h6 align =left><strong>Purex élevage de Poulet : </strong></h6>
                <small> Recherche hommes/ femmes / créatures fantastiques pour  féconder des coqs! </small><br></br>
                <small> Posté par: Dc Mephisto </small>
-               <input type="button" class="btn btn-primary btn-sm" value="GO" id="boutongo">
+               <input type="button" class="btn btn-primary btn-sm" value="GO" id="go<?php echo $i?>" onclick="go(id)">
              </div>
          </div>
+         <?php } ?>
       </div>
     </div>
     </div>
     </div>
-
-    <div class="modal fade" id="Modalcomment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php for( $i=0;$i<10;$i++){ ?>
+    <div class="modal fade" id="<?php echo $i?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
      <div class="modal-content">
        <div class="modal-header">
-         <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire : </strong></h4>
+         <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire du post <?php echo $i?>: </strong></h4>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <span aria-hidden="true">&times;</span>
          </button>
@@ -134,6 +136,7 @@
      </div>
     </div>
     </div>
+    <?php } ?>
 </div>
 <?php $content = ob_get_clean(); ?>
 
