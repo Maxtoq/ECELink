@@ -10,23 +10,18 @@
 
 <!-- Content -->
 <?php ob_start(); ?>
+<!-- Conteneur de la page  -->
 <div class="container text-center">
       <div class="row">
+          <!-- Colonne pour l'image vers le profil   -->
             <div class="col-sm-2 well">
                 <div class="well" id="photoHG">
                     <!-- Ecriture sous profil en haut a gauche -->
                     <h5 style ="color:#3277b3;"><a href="index.php?action=monProfil"><?= $this->user->getPrenom().' '.$this->user->getNom() ?></a></h5>
                     <a href="index.php?action=monProfil"><img src="img/mickey.jpg" class="img-circle" height="80" width="80" alt="Avatar"></a>
                 </div>
-
-                <!--<div class="Description_Pro">
-                    Ecriture sous les centres d'interêts en haut a gauche
-                    <h4 style ="color:#3277b3;">Parcours Pro</h4>
-                    <p>Scola Lycée Hoche</p>
-                    <p>Stage Fin d'année 1ère Dassault Système</p>
-                </div>-->
                 <div class="Info perso">
-                    <!-- Ecriture sous les parcours pro a gauche -->
+                    <!-- Ecriture Sa description-->
                     <h4 style ="color:#3277b3;">Descritpion Personnelle</h4>
                     <p><?= $this->user->getDescr() ?></p>
                 </div>
@@ -60,18 +55,23 @@
                <!--Conteneur photo-->
                <div class="col-sm-3" >
                  <div class="well" id="conteneur_photo">
-                     <a href="index.php?id=<?= $data['id_auteur'] ?>">     
+                     <a href="index.php?action=profil&id=<?= $data['id_auteur'] ?>">
                          <p ><strong> <?= $this->auteurManager->getNom($data['id_auteur']) ?></strong></p>
                          <img src="img/mickey.jpg" class="img-circle"  height="70" width="70" alt="Avatar">
                      </a>
                 </div>
                </div>
                <div class="col-sm-9" id="contpubli">
-                 <div class="well" >
-                   <p> <?= htmlspecialchars( $data['texte'])?></p>
-                   <button type="button" class="btn btn-default btn-sm">
-                     <span class="glyphicon glyphicon-thumbs-up"></span> Like
-                   </button>
+                  <div class="well" >
+                        <p> <?= htmlspecialchars( $data['texte'])?></p>
+                        <a href="index.php?action=post&id=<?= $data['id'] ?>">
+                            <button type="button" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-zoom-in"></span> Go to Publication
+                            </button>
+                        </a>
+                         <button type="button" class="btn btn-default btn-sm">
+                             <span class="glyphicon glyphicon-thumbs-up"></span> Like
+                         </button>
                    <div class="dropdown">
                      <button type="button" data-toggle="modal"  data-target="#message<?php echo $data['id'];?>" class="btn btn-default btn-sm">
                      <span class="glyphicon glyphicon-comment"></span> Commenter
