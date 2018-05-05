@@ -34,12 +34,16 @@ function goPage($page) {
         case 'LOGIN':
             $controler->getLogIn();
             break;
+        case 'MONPROFIL':
+            $controler->getMonProfil();
+            break;
     }
 }
 
 
 
 if (isset($_GET['action'])) {
+    // On veut charger la page d'accueil
     if ($_GET['action'] == 'accueil') {
         // Si on est déjà connecté
         if ($controler->getConnected()) {
@@ -64,6 +68,17 @@ if (isset($_GET['action'])) {
         	else {
                 goPage('LOGIN');
         	}
+        }
+    }
+    // On cherche à aller sur la page monProfil
+    elseif ($_GET['action'] == 'profil') {
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On charge la page monProfil
+            goPage('MONPROFIL');
+        }
+        else {
+            goPage('LOGIN');
         }
     }
 }

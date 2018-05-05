@@ -68,5 +68,9 @@ class Controler {
     public function getLogIn() {
         require('View/connectView.php');
     }
+
+    public function getMonProfil() {
+        require('View/monProfilView.php');
+    }
 }
 ?>
