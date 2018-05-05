@@ -52,24 +52,24 @@
                   </div>
                 </div>
               </div>
-              <?php for( $i=0;$i<3;$i++){ ?>
+              <?php while ($data = $posts->fetch()){ ?>
              <!-- Conteneur photo ami plus nom plus texte publié-->
              <div class="row" id="post">
                <!--Conteneur photo-->
                <div class="col-sm-3" >
                  <div class="well" id="conteneur_photo">
-                  <p ><strong>Ami numero <?php echo $i?></strong></p>
+                  <p ><strong>Ami numero <?php $data['id_auteur']?></strong></p>
                   <img src="img/mickey.jpg" class="img-circle"  height="70" width="70" alt="Avatar">
                 </div>
                </div>
                <div class="col-sm-9" id="contpubli">
                  <div class="well" >
-                   <p> Publication numéro <?php echo $i?></p>
+                   <p> <?php $data['text']?></p>
                    <button type="button" class="btn btn-default btn-sm">
                      <span class="glyphicon glyphicon-thumbs-up"></span> Like
                    </button>
                    <div class="dropdown">
-                     <button type="button" data-toggle="modal"  data-target="#<?php echo $i?>" class="btn btn-default btn-sm">
+                     <button type="button" data-toggle="modal"  data-target="#<?php $data['id']?>" class="btn btn-default btn-sm">
                      <span class="glyphicon glyphicon-comment"></span> Commenter
                    </button>
                       <div id="myDropdown" class="dropdown-content">
@@ -112,12 +112,12 @@
     </div>
     </div>
     </div>
-<?php for( $i=0;$i<10;$i++){ ?>
-    <div class="modal fade" id="<?php echo $i?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal fade" id="<?php $data['id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
      <div class="modal-content">
        <div class="modal-header">
-         <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire du post <?php echo $i?>: </strong></h4>
+         <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire du post <?php $data['id']?>: </strong></h4>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <span aria-hidden="true">&times;</span>
          </button>
@@ -135,7 +135,7 @@
      </div>
     </div>
     </div>
-    <?php } ?>
+
 </div>
 <?php $content = ob_get_clean(); ?>
 
