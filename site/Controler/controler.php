@@ -106,6 +106,8 @@ class Controler {
     public function getProfil() {
         // On récupère l'id de l'auteur
         $id_auteur = $_GET['id'];
+        // On récupère l'auteur en question
+        $auteur = $this->auteurManager->getById($id_auteur);
         require('View/profilView.php');
     }
 

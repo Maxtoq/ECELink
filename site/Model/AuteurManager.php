@@ -57,7 +57,7 @@ class AuteurManager extends Manager {
         if ($q) {
             $data = $q->fetch(PDO::FETCH_ASSOC);
 
-            return new Auteur($data['id'], $data['actif'], $data['nom'], $data['prenom'], $data['mail'], $data['pseudo'], $data['mdp'], $data['desc']);
+            return new Auteur($data['id'], $data['actif'], $data['nom'], $data['prenom'], $data['mail'], $data['pseudo'], $data['mdp'], $data['descr']);
         }
         else return null;
     }
