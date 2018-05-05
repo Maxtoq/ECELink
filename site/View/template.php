@@ -25,16 +25,17 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand" href="index.php?action=accueil">ECE Link</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                     <li class="active"><a href="#">Accueil</a></li>
-                     <li><a href="#">Profil</a></li>
-                     <li><a href="#">Réseau</a></li>
+                     <li class="active"><a href="index.php?action=accueil">Accueil</a></li>
+                     <li><a href="index.php?action=monprofil">Profil</a></li>
+                     <li><a href="index.php?action=reseau">Réseau</a></li>
+                     <li><a href="index.php?action=emplois">Emplois</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" action="index.php?action=deco" method="post">
-                    <input type="submit" value="Déconnexion">
+                    <input type="submit" class="btn btn-primary btn-sm" value="Déconnexion">
                 </form>
                 <form class="navbar-form navbar-right" role="search">
                      <div class="form-group input-group">
@@ -59,7 +60,7 @@
 
 
                 </li>
-                 <li><a href="#">M</a></li>
+                 <li><a href="index.php?action=message">M</a></li>
                 </ul>
             </div>
         </div>
@@ -78,15 +79,15 @@
 
           <div class="footer-left">
                 <p class="footer-links">
-                      <a href="#">Accueil</a>
+                      <a href="index.php?action=accueil">Accueil</a>
                       ·
-                      <a href="#">Profil</a>
+                      <a href="index.php?action=monprofil">Profil</a>
                       ·
-                      <a href="#">Réseau</a>
+                      <a href="index.php?action=reseau">Réseau</a>
                       ·
-                      <a href="#">Messages</a>
+                      <a href="index.php?action=message">Messages</a>
                       ·
-                      <a href="#">Contact</a>
+                      <a href="index.php?action=emplois">Emplois</a>
                 </p>
                 <p>Le Coon et sa Bande &copy; 2018</p>
           </div>

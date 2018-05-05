@@ -15,8 +15,8 @@
             <div class="col-sm-2 well">
                 <div class="well" id="photoHG">
                     <!-- Ecriture sous profil en haut a gauche -->
-                    <h5 style ="color:#3277b3;"><a href="index.php?action=profil"><?= $this->user->getPrenom().' '.$this->user->getNom() ?></a></h5>
-                    <a href="#"><img src="img/mickey.jpg" class="img-circle" height="80" width="80" alt="Avatar"></a>
+                    <h5 style ="color:#3277b3;"><a href="index.php?action=monprofil"><?= $this->user->getPrenom().' '.$this->user->getNom() ?></a></h5>
+                    <a href="index.php?action=monprofil"><img src="img/mickey.jpg" class="img-circle" height="80" width="80" alt="Avatar"></a>
                 </div>
 
                 <!--<div class="Description_Pro">
@@ -52,19 +52,19 @@
                   </div>
                 </div>
               </div>
-              <?php for( $i=0;$i<10;$i++){ ?>
+              <?php for( $i=0;$i<3;$i++){ ?>
              <!-- Conteneur photo ami plus nom plus texte publié-->
              <div class="row" id="post">
                <!--Conteneur photo-->
                <div class="col-sm-3" >
                  <div class="well" id="conteneur_photo">
-                  <p ><strong>Saddam Hussein</strong></p>
-                  <img src="Saddam-southpark.png" class="img-circle"  height="70" width="70" alt="Avatar"  >
+                  <p ><strong>Ami numero <?php echo $i?></strong></p>
+                  <img src="img/mickey.jpg" class="img-circle"  height="70" width="70" alt="Avatar">
                 </div>
                </div>
                <div class="col-sm-9" id="contpubli">
                  <div class="well" >
-                   <p> Satan and I finnaly broke up, feeling blue :'(</p>
+                   <p> Publication numéro <?php echo $i?></p>
                    <button type="button" class="btn btn-default btn-sm">
                      <span class="glyphicon glyphicon-thumbs-up"></span> Like
                    </button>
@@ -96,15 +96,14 @@
         <h3 class="panel-title" align="left" >Suggestions :</h3>
       </div>
       <div class="panel-body">
-        <?php for( $i=0;$i<6;$i++){ ?>
+        <?php for( $i=0;$i<4;$i++){ ?>
          <div class="panel panel-info">
            <div class="panel-heading">
-          <h5 class="panel-title" align="left" >Offre d'emploi :</h5>
+          <h5 class="panel-title" align="left" >Offre d'emploi numero <?php echo $i?>:</h5>
           </div>
           <div class="panel-body">
-            <h6 align =left><strong>Purex élevage de Poulet : </strong></h6>
-               <small> Recherche hommes/ femmes / créatures fantastiques pour  féconder des coqs! </small><br></br>
-               <small> Posté par: Dc Mephisto </small>
+            <h6 align =left><strong>Entreprise <?php echo $i?> : </strong></h6>
+               <small> Description du travail!</small><br></br>
                <input type="button" class="btn btn-primary btn-sm" value="GO" id="go<?php echo $i?>" onclick="go(id)">
              </div>
          </div>
@@ -118,7 +117,7 @@
     <div class="modal-dialog" role="document">
      <div class="modal-content">
        <div class="modal-header">
-         <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire du post <?php echo $i?>: </strong></h4>
+         <h4 class="modal-title" id="exampleModalLabel"><strong>Votre Commentaire du post <?php echo $i++?>: </strong></h4>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <span aria-hidden="true">&times;</span>
          </button>

@@ -1,5 +1,5 @@
 <!-- Titre de la page -->
-<?php $title = 'ECELink - Accueil'; ?>
+<?php $title = 'ECELink -Mon Profile'; ?>
 
 <!-- Stylesheet et scripts à inclure -->
 <?php ob_start(); ?>
@@ -14,7 +14,7 @@
 <div class ="row">
  <div class = "col-md-8">
    <div class ="profile">
-     <h1 class="page-header" style ="color:#3277b3;" align= center >Mickey Mouse </h1>
+     <h1 class="page-header" style ="color:#3277b3;" align= center >Profil utilisateur </h1>
      <div class ="row">
        <div class="col-md-4 ">
          <div class="well">
