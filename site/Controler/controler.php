@@ -78,6 +78,7 @@ class Controler {
     }
 
     public function getAccueil() {
+        $posts = $this->selectList($this->user->getId());
         require('View/accueilView.php');
     }
 
