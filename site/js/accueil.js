@@ -14,6 +14,7 @@ function myFunction2(element) {
 }
 
 $(document).ready(function(){
+    alert('p');
     $('.btnContact').click(function(){
         $("#Modalcomment").modal();
         var id = $(this).attr('id');
