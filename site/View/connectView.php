@@ -39,7 +39,7 @@
        <h2 class="panel-title" align="left" > Inscription :</h2>
      </div>
      <div class="panel-body">
-       <form action ="index.php?action=accueil" method="post">
+       <form action ="index.php?action=new" method="post">
          <div class="form-group">
            <label for="InputNom">Nom :</label>
            <input type="text" class="form-control" id="InputNom" autocomplete="off"   placeholder="Enter Nom">
