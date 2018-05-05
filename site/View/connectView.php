@@ -10,14 +10,18 @@
 
 <!-- Content -->
 <?php ob_start(); ?>
+<!-- container pour la page  -->
 <div class="container">
+    <!-- Row pour la structure -->
  <div class="row">
+     <!-- première colonne ou l'on trouve le formule de connection -->
    <div class="col-md-4">
      <div class="panel panel-primary">
        <div class="panel-heading">
          <h2 class="panel-title" align="left" >Connexion :</h2>
        </div>
        <div class="panel-body">
+           <!-- heck le pseudo et le mdp avec la bdd -->
          <form action ="index.php?action=accueil" method="post">
            <div class="form-group">
              <label for="InputPseudoco">Pseudo :</label>
@@ -33,12 +37,14 @@
 
      </div>
    </div>
+  <!-- Colonne pour l'inscritpion -->
  <div class="col-md-8">
    <div class="panel panel-info">
      <div class="panel-heading">
        <h2 class="panel-title" align="left" > Inscription :</h2>
      </div>
      <div class="panel-body">
+         <!-- Form pour envoyer les donnes neccesaire a la creation d'un compte dans la bdd -->
        <form action ="index.php?action=new" method="post">
          <div class="form-group">
            <label for="InputNom">Nom :</label>
@@ -68,6 +74,7 @@
            <label for="Desc">Description Personnelle :</label>
            <textarea class="form-control" name="descr" rows="3"></textarea>
          </div>
+         <!-- Fieldset pour une meilleur structure et affichage coherent -->
          <fieldset class="form-group">
            <legend>Vous êtes :</legend>
            <div class="form-check">
@@ -83,10 +90,14 @@
                <input type="radio" class="form-check-input" name="typeRadio" id="pro" onclick="Check()" value="Professionnel" autocomplete="off" >
                Professionel
              </label>
+             <!-- Form qui ne s'affichera que si le radio button etudiant est coche -->
              <div class="reveal-if-active" id="ifYes"  style="display:none">
                <label for="maj">Votre Majeur :</label>
+               <!-- Soit une eleve a une majeure soit il n'en a pas -->
                <select class="form-control" name="maj" >
                  <option value="">Choississez ici :</option>
+                 <option value ="--">--</option>
+                 <option value ="SE">SE</option>
                  <option value ="SE">SE</option>
                  <option value ="SI">SI</option>
                  <option value ="OCRES">OCRES</option>
@@ -105,10 +116,12 @@
                  <option value ="Autres">Autres</option>
                </select>
              </div>
+             <!-- Form qui ne s'affichera que si on coche la case prof -->
              <div class="reveal-if-active" id="ifYes1"   style="display:none">
                <label for="InputMatiere">Quelle est votre Matière ?</label>
                <input type="text" class="form-control"name="matiere" autocomplete="off" placeholder="Matière">
              </div>
+             <!-- Form qui ne s'affichera que si on coche la case pro -->
              <div class="reveal-if-active" id="ifYes2"  style="display:none">
                <label for="InputEntreprise">A quelle entreprise appartenez-vous?</label>
                <input type="text" class="form-control" name="entreprise" autocomplete="off" placeholder="Entreprise">
