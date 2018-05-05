@@ -33,34 +33,16 @@
          <div class="row">
                <div class="panel panel-primary">
                    <div class="panel-heading">
-                       <h3 class="panel-title" align=left >C.V :</h3>
+                       <h3 class="panel-title" align=left >Description Personnelle :</h3>
                    </div>
-                   <div class="panel-body" > <p id="CV"> President de La Disney Unlimited Compagny HAHA,
-                        Vous allez me laisser vendre du sexe à vos petites filles</p>
+                   <div class="panel-body" > <p id="CV"> mes loisirs, mes sports et mes activités favorites </p>
                         <div class="buttonmodif" id="button_modif">
                           <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalpubliCV"  align ="right" >Modifier</button>
                         </div>
                    </div>
                </div>
          </div>
-         <div class="row">
-             <div class="panel panel-primary">
-                 <div class="panel-heading">
-                     <h3 class="panel-title" align=left >Description Personnelle :</h3>
-                 </div>
-                 <div class="panel-body">
-                     <h4><strong style ="color:#3277b3;"> Loisirs : </strong></h4>
-                     <p id="loisirs"> La destruction, la mort et surtout la vente de sexe aux enfants!</p>
-                     <h4><strong style ="color:#3277b3;"> Sports : </strong></h4>
-                     <p id ="sports"> Karaté bien sur.</p>
-                     <h4> <strong style ="color:#3277b3;">Voyage : </strong></h4>
-                     <p id="voyages"> Vahlala une fois par semaine.</p>
-                     <div class="buttonmodif">
-                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" onclick="textLoisir()" data-target="#ModalpubliDP" align = right >Modifier</button>
-                     </div>
-                 </div>
-             </div>
-        </div>
+
              <div class="row">
                <div class="panel panel-primary">
                    <div class="panel-heading">
