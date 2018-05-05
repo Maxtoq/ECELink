@@ -73,5 +73,21 @@ class Controler {
     public function getMonProfil() {
         require('View/monProfilView.php');
     }
+
+    public function getReseau() {
+        require('View/reseauView.php');
+    }
+
+    public function getEmplois() {
+        require('View/emploisView.php');
+    }
+
+    public function getProfil() {
+        require('View/profilView.php');
+    }
+
+    public function getMessages() {
+        require('View/messagesView.php');
+    }
 }
 ?>

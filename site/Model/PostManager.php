@@ -50,14 +50,29 @@ class PostManager extends Manager {
     public function getById($id) {
         $id = (int) $id;
 
+        // On éxécute la requête
         if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->query('SELECT * FROM '.self::POST_TABLE.' WHERE id = '.$id);
 
+        // Si on a bien retourné un post
         if ($q) {
             $data = $q->fetch(PDO::FETCH_ASSOC);
 
+            // On retourne le post
             return new Post($data['id'], $data['actif'], $data['id_auteur'], $data['texte']);
         }
+        // Sinon on retourne null
+        else return null;
+    }
+
+    public function selectList($id_auteur) {
+        // On éxécute la requête
+        if (is_null(Manager::$db)) parent::dbConnect();
+        $q = Manager::$db->query('SELECT id, id_auteur, texte FROM '.self::POST_TABLE.' ORDER BY id DESC');
+
+        // Si la requête est une résussite, on retourne le résultat de la requête
+        if ($q) return $q;
+        // Sinon on retourne null
         else return null;
     }
 

@@ -37,6 +37,18 @@ function goPage($page) {
         case 'MONPROFIL':
             $controler->getMonProfil();
             break;
+        case 'RESEAU':
+            $controler->getReseau();
+            break;
+        case 'EMPLOIS':
+            $controler->getEmplois();
+            break;
+        case 'PROFIL':
+            $controler->getProfil();
+            break;
+        case 'MESSAGES':
+            $controler->getMessages();
+            break;
     }
 }
 
@@ -76,6 +88,50 @@ if (isset($_GET['action'])) {
         if ($controler->getConnected()) {
             // On charge la page monProfil
             goPage('MONPROFIL');
+        }
+        else {
+            goPage('LOGIN');
+        }
+    }
+    // On cherche à aller sur la page réseau
+    elseif ($_GET['action'] == 'reseau') {
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On charge la page monProfil
+            goPage('RESEAU');
+        }
+        else {
+            goPage('LOGIN');
+        }
+    }
+    // On cherche à aller sur la page emplois
+    elseif ($_GET['action'] == 'emplois') {
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On charge la page monProfil
+            goPage('EMPLOIS');
+        }
+        else {
+            goPage('LOGIN');
+        }
+    }
+    // On cherche à aller sur la page profil
+    elseif ($_GET['action'] == 'profil') {
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On charge la page monProfil
+            goPage('PROFIL');
+        }
+        else {
+            goPage('LOGIN');
+        }
+    }
+    // On cherche à aller sur la page messages
+    elseif ($_GET['action'] == 'messages') {
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On charge la page monProfil
+            goPage('MESSAGES');
         }
         else {
             goPage('LOGIN');

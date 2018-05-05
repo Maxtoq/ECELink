@@ -79,6 +79,13 @@ class AuteurManager extends Manager {
         else return null;
     }
 
+    /**
+     * Trouve quel est le type de l'auteur passé en paramètre
+     *
+     * @param  Auteur $user utilisateur
+     *
+     * @return string       string décrivant le type d'utilisateur
+     */
     public function findUserType(Auteur $user) {
         // On recherche dans les tables etudiant, enseignant et pro le champs correspondant au user
         if (is_null(Manager::$db)) parent::dbConnect();
