@@ -104,6 +104,8 @@ class Controler {
     }
 
     public function getProfil() {
+        // On récupère l'id de l'auteur
+        $id_auteur = $_GET['id'];
         require('View/profilView.php');
     }
 
