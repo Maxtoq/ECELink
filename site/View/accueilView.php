@@ -44,10 +44,12 @@
                   <div class="panel panel-default text-left">
                     <div class="panel-body">
                       <p style ="color:#3277b3;"><strong>Statut : </strong> </p>
-                       <textarea  name="publication"  rows="1" cols="80" resize : none placeholder="Partagez comment vous sentez vous!"></textarea>
-                       <div class="buttonpubli">
-                         <input type="button" class="btn btn-primary btn-sm" value="Publier" onclick="publi()">
-                       </div>
+                      <form action="">
+                          <textarea  name="publication"  rows="1" cols="80" resize : none placeholder="Partagez comment vous sentez vous!"></textarea>
+                          <div class="buttonpubli">
+                              <input type="submit" class="btn btn-primary btn-sm" value="Publier">
+                          </div>
+                      </form>
                     </div>
                   </div>
                 </div>
