@@ -42,7 +42,9 @@
                    <div class="panel-heading">
                        <h3 class="panel-title" align=left >Post récent :</h3>
                    </div>
-                   <div class="panel-body"> <p> Plein de trucs géniaux</p>
+                   <div class="well">
+                    <p> Plein de trucs géniaux</p>
+                   </div>
                    </div>
                </div>
          </div>
