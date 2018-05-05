@@ -18,6 +18,7 @@ $(document).ready(function(){
         $("#Modalcomment").modal();
         var id = $(this).attr('id');
         $("#to").val(id);
+        alert("id");
         return false;
     });
 });
