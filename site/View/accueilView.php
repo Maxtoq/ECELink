@@ -16,7 +16,7 @@
                 <div class="well" id="photoHG">
                     <!-- Ecriture sous profil en haut a gauche -->
                     <h5 style ="color:#3277b3;"><a href="index.php?action=monProfil"><?= $this->user->getPrenom().' '.$this->user->getNom() ?></a></h5>
-                    <a href="index.php?action=monprofil"><img src="img/mickey.jpg" class="img-circle" height="80" width="80" alt="Avatar"></a>
+                    <a href="index.php?action=monProfil"><img src="img/mickey.jpg" class="img-circle" height="80" width="80" alt="Avatar"></a>
                 </div>
 
                 <!--<div class="Description_Pro">
@@ -60,8 +60,10 @@
                <!--Conteneur photo-->
                <div class="col-sm-3" >
                  <div class="well" id="conteneur_photo">
-                  <p ><strong> <?= $this->auteurManager->getNom($data['id_auteur']) ?></strong></p>
-                  <img src="img/mickey.jpg" class="img-circle"  height="70" width="70" alt="Avatar">
+                     <a href="index.php?id=<?= $data['id_auteur'] ?>">     
+                         <p ><strong> <?= $this->auteurManager->getNom($data['id_auteur']) ?></strong></p>
+                         <img src="img/mickey.jpg" class="img-circle"  height="70" width="70" alt="Avatar">
+                     </a>
                 </div>
                </div>
                <div class="col-sm-9" id="contpubli">
