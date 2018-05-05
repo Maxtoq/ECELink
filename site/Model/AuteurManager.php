@@ -62,6 +62,7 @@ class AuteurManager extends Manager {
 
     public function getByPseudo($pseudo) {
         // On recherche un auteur dans la table avec le pseudo demandé
+        if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->query('SELECT * FROM '.self::AUTEUR_TABLE.' WHERE pseudo = \''.$pseudo.'\'');
 
         // Si la requête retourne bien un auteur
