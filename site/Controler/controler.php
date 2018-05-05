@@ -50,8 +50,6 @@ class Controler {
 
             // On cherche de quel type est le user
             $this->userType = $this->auteurManager->findUserType($this->user);
-            // A RETIRER
-            die($this->getUserType());
         }
         // Sinon on met connected à false
         else $this->connected = false;

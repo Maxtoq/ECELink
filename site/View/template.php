@@ -33,7 +33,7 @@
                      <li><a href="#">Profil</a></li>
                      <li><a href="#">Réseau</a></li>
                 </ul>
-                <form class="navbar-form navbar-right" action="index.html?action=deco" method="post">
+                <form class="navbar-form navbar-right" action="index.php?action=deco" method="post">
                     <input type="submit" value="Déconnexion">
                 </form>
                 <form class="navbar-form navbar-right" role="search">

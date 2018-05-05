@@ -81,6 +81,13 @@ if (isset($_GET['action'])) {
             goPage('LOGIN');
         }
     }
+    // On cherche à se déconnecter
+    elseif ($_GET['action'] == 'deco') {
+        // On supprime les données de la session
+        session_destroy();
+        // On recharge la première page
+        header("Refresh:0; url = index.php");
+    }
 }
 else {
     goPage('LOGIN');
