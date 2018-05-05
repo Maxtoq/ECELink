@@ -4,7 +4,7 @@
 <!-- Stylesheet et scripts à inclure -->
 <?php ob_start(); ?>
 <link rel="stylesheet" type = "text/css" href ="css/acceuil.css">
-<script type="text/javascript" src ="js/accueil.js"></script>
+<script type="text/javascript" src="js/accueil.js"></script>
 <?php $include = ob_get_clean(); ?>
 <?php ob_end_flush(); ?>
 

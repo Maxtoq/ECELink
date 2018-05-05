@@ -8,13 +8,13 @@
   textarea[name=ameliorer] {
     resize: none;
   }
- .buttonpp{
+ .btn1{
 	width: : 50px;
 	height: 10px;
 	opacity: 0;
   	position: absolute;
     top: 10%;
-    left: 0%;
+    left: 40%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: #11ffee00;
@@ -25,16 +25,17 @@
     cursor: pointer;
     border-radius: 5px;
 }
+
 .img-circle{
-    float: right;
-	margin: 15px;
-    padding-right: 150px;
+
+
+    margin-left: 21px;
 }
 
-.buttonpp:hover {
+.btn1:hover {
   background-color: #11ffee00;
   color : black;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .buttonmodif{
@@ -43,6 +44,6 @@
 }
 #PP{
 
-  float: none;
+  align-items: center;
   bottom: 5px;
 }
