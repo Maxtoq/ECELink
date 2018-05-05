@@ -1,0 +1,13 @@
+.well{
+	margin-top: 10px;
+}
+button{
+	float: right;
+	position: relative;
+	bottom: 10px;
+}
+
+#pasmal{
+	position: relative;
+	top:30px;
+}
