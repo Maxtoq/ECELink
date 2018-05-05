@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                      <li class="active"><a href="index.php?action=accueil">Accueil</a></li>
-                     <li><a href="index.php?action=monprofil">Profil</a></li>
+                     <li><a href="index.php?action=monProfil">Profil</a></li>
                      <li><a href="index.php?action=reseau">Réseau</a></li>
                      <li><a href="index.php?action=emplois">Emplois</a></li>
                 </ul>
@@ -81,7 +81,7 @@
                 <p class="footer-links">
                       <a href="index.php?action=accueil">Accueil</a>
                       ·
-                      <a href="index.php?action=monprofil">Profil</a>
+                      <a href="index.php?action=monProfil">Profil</a>
                       ·
                       <a href="index.php?action=reseau">Réseau</a>
                       ·
