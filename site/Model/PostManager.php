@@ -68,13 +68,32 @@ class PostManager extends Manager {
     /**
      * Renvoies les posts
      *
-     * @param  int $id_user id du user (inutile pour l'instant)
+     * @param  Auteur $id_user id du user (inutile pour l'instant)
+     *
      * @return array        champs retournés par la requête
      */
     public function selectList($id_user) {
         // On éxécute la requête
         if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->query('SELECT id, id_auteur, texte FROM '.self::POST_TABLE.' ORDER BY id DESC');
+
+        // Si la requête est une résussite, on retourne le résultat de la requête
+        if ($q) return $q;
+        // Sinon on retourne null
+        else return null;
+    }
+
+    /**
+     * Renvoies les posts d'un auteur
+     *
+     * @param  Auteur $id_auteur id du auteur (inutile pour l'instant)
+     *
+     * @return array        champs retournés par la requête
+     */
+    public function selectListAuteur($id_auteur) {
+        // On éxécute la requête
+        if (is_null(Manager::$db)) parent::dbConnect();
+        $q = Manager::$db->query('SELECT id, id_auteur, texte FROM '.self::POST_TABLE.' WHERE id_auteur = '.$id_auteur.' ORDER BY id DESC');
 
         // Si la requête est une résussite, on retourne le résultat de la requête
         if ($q) return $q;
