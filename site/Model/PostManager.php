@@ -64,31 +64,23 @@ class PostManager extends Manager {
      *
      * @param  Post $post post à modifier
      */
-    /*public function update(Post $post) {
+    public function update(Post $post) {
         // On crée la requête update
         // On commence par la préparer
-        $q = Manager::$db->prepare('UPDATE '.self::POST_TABLE.' SET nom = :nom, prenom = :prenom, mail = :mail, pseudo = :pseudo, mdp = :mdp, descr = :descr, actif = :actif WHERE id = :id');
+        $q = Manager::$db->prepare('UPDATE '.self::POST_TABLE.' SET id_auteur = :id_auteur, texte = :texte, actif = :actif WHERE id = :id');
 
         // On remplit les champs de la requête
-        $nom = $post->getNom();
-        $prenom = $post->getPrenom();
-        $mail = $post->getMail();
-        $pseudo = $post->getPseudo();
-        $mdp = $post->getMdp();
-        $descr = $post->getDescr();
+        $id_auteur = $post->getId_auteur();
+        $texte = $post->getTexte();
         $actif = $postr->getActif();
         $id = $post->getId();
-        $q->bindParam(':nom', $nom);
-        $q->bindParam(':prenom', $prenom);
-        $q->bindParam(':mail', $mail);
-        $q->bindParam(':pseudo', $pseudo);
-        $q->bindParam(':mdp', $mdp);
-        $q->bindParam(':descr', $descr);
+        $q->bindParam(':id_auteur', $id_auteur, PDO::PARAM_INT);
+        $q->bindParam(':texte', $texte);
         $q->bindParam(':actif', $actif, PDO::PARAM_INT);
         $q->bindParam(':id', $id, PDO::PARAM_INT);
 
         // On éxécute la requête
         $q->execute();
-    }*/
+    }
 }
 ?>
