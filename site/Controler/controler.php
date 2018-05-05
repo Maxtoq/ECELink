@@ -3,6 +3,7 @@ require('Model/AuteurManager.php');
 require('Model/EtudiantManager.php');
 require('Model/EnseignantManager.php');
 require('Model/ProManager.php');
+require('Model/PostManager.php');
 
 class Controler {
     // Les Manager
@@ -10,6 +11,7 @@ class Controler {
     private $etudiantManager;
     private $enseignantManager;
     private $proManager;
+    private $postManager;
 
     // L'utilisateur
     private $user;
@@ -24,6 +26,7 @@ class Controler {
         $this->etudiantManager = new EtudiantManager;
         $this->enseignantManager = new EnseignantManager;
         $this->proManager = new ProManager;
+        $this->postManager = new PostManager;
     }
 
     public function getUser() { return $this->user; }

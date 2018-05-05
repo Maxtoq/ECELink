@@ -32,7 +32,7 @@ class AuteurManager extends Manager {
             // On retourne le nouvel auteur
             return $this->getByPseudo($_pseudo);
         }
-        // Sinon on retourne false
+        // Sinon on retourne null
         else return null;
     }
 
