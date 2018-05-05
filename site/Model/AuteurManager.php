@@ -79,6 +79,16 @@ class AuteurManager extends Manager {
         else return null;
     }
 
+    public function getNom($_id) {
+        // On recherche un auteur dans la table avec le pseudo demandé
+        if (is_null(Manager::$db)) parent::dbConnect();
+        $q = Manager::$db->query('SELECT nom, prenom FROM '.self::AUTEUR_TABLE.' WHERE id = '.$_id);
+
+        $data = $q->fetch(PDO::FETCH_ASSOC);
+
+        return $data['prenom'].' '.$data['nom'];
+    }
+
     /**
      * Trouve quel est le type de l'auteur passé en paramètre
      *

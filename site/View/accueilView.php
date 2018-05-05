@@ -58,7 +58,7 @@
                <!--Conteneur photo-->
                <div class="col-sm-3" >
                  <div class="well" id="conteneur_photo">
-                  <p ><strong> <?= htmlspecialchars($data['id_auteur']) ?></strong></p>
+                  <p ><strong> <?= $this->auteurManager->getNom($data['id_auteur']) ?></strong></p>
                   <img src="img/mickey.jpg" class="img-circle"  height="70" width="70" alt="Avatar">
                 </div>
                </div>
