@@ -17,6 +17,7 @@ class AuteurManager extends Manager {
     public function addAuteur($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr) {
         // On crée la requête insert into
         // On commence par la préparer
+        if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->prepare('INSERT INTO '.self::AUTEUR_TABLE.'(nom, prenom, mail, pseudo, mdp, descr, actif) VALUES(:nom, :prenom, :mail, :pseudo, :mdp, :descr, 1)');
 
         // On remplit les champs de la requête
@@ -50,6 +51,7 @@ class AuteurManager extends Manager {
     public function getById($id) {
         $id = (int) $id;
 
+        if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->query('SELECT * FROM '.self::AUTEUR_TABLE.' WHERE id = '.$id);
 
         if ($q) {
@@ -101,6 +103,7 @@ class AuteurManager extends Manager {
     public function update(Auteur $auteur) {
         // On crée la requête update
         // On commence par la préparer
+        if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->prepare('UPDATE '.self::AUTEUR_TABLE.' SET nom = :nom, prenom = :prenom, mail = :mail, pseudo = :pseudo, mdp = :mdp, descr = :descr, actif = :actif WHERE id = :id');
 
         // On remplit les champs de la requête

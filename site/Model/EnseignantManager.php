@@ -22,6 +22,7 @@ class EnseignantManager extends AuteurManager {
         if (!is_null($auteur)) {
             // On crée la requête insert into
             // On commence par la préparer
+            if (is_null(Manager::$db)) parent::dbConnect();
             $q = Manager::$db->prepare('INSERT INTO '.self::ENSEIGNANT_TABLE.'(id, matiere, actif) VALUES(:id, :matiere, 1)');
 
             // On remplit les champs de la requête

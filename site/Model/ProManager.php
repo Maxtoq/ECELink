@@ -22,6 +22,7 @@ class ProManager extends AuteurManager {
         if (!is_null($auteur)) {
             // On crée la requête insert into
             // On commence par la préparer
+            if (is_null(Manager::$db)) parent::dbConnect();
             $q = Manager::$db->prepare('INSERT INTO '.self::PRO_TABLE.'(id, entreprise, poste, actif) VALUES(:id, :entreprise, :poste, 1)');
 
             // On remplit les champs de la requête

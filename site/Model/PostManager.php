@@ -17,6 +17,7 @@ class PostManager extends Manager {
     public function addPost($_id_auteur, $_texte) {
         // On crée la requête insert into
         // On commence par la préparer
+        if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->prepare('INSERT INTO '.self::POST_TABLE.'(id_auteur, texte, actif) VALUES(:id_auteur, :texte, 1)');
 
         // On remplit les champs de la requête
@@ -49,6 +50,7 @@ class PostManager extends Manager {
     public function getById($id) {
         $id = (int) $id;
 
+        if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->query('SELECT * FROM '.self::POST_TABLE.' WHERE id = '.$id);
 
         if ($q) {
@@ -67,6 +69,7 @@ class PostManager extends Manager {
     public function update(Post $post) {
         // On crée la requête update
         // On commence par la préparer
+        if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->prepare('UPDATE '.self::POST_TABLE.' SET id_auteur = :id_auteur, texte = :texte, actif = :actif WHERE id = :id');
 
         // On remplit les champs de la requête
