@@ -49,6 +49,9 @@ function goPage($page) {
         case 'MESSAGES':
             $controler->getMessages();
             break;
+        case 'POST':
+            $controler->getPost();
+            break;
     }
 }
 
@@ -197,6 +200,15 @@ if (isset($_GET['action'])) {
         }
         else goPage('LOGIN');
     }
+    // On cherche à aller sur la page post
+    elseif ($_GET['action'] == 'post') {
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On charge la page messages
+            goPage('POST');
+        }
+        else goPage('LOGIN');
+    }
     // On cherche à se déconnecter
     elseif ($_GET['action'] == 'deco') {
         // Si on est déjà connecté
@@ -225,11 +237,11 @@ if (isset($_GET['action'])) {
         // Si on est déjà connecté
         if ($controler->getConnected()) {
             // On vérifie que le textArea est rempli
-            $texte = isset($_POST["publi"]) ? $_POST["publi"] : "";
+            $texte = isset($_POST["comm"]) ? $_POST["comm"] : "";
             if ($texte != "") {
-                $controler->publiPost($texte);
+                $controler->publiComm($texte);
         	}
-            goPage('ACCUEIL');
+            goPage('POST');
         }
         else goPage('LOGIN');
     }

@@ -25,28 +25,31 @@
                 <div class="panel panel-primary">
                     <!-- titre avec la photo et le nom de l'utilisateur qui a fait le post -->
                     <div class="panel-heading">
-                        <img src="mickey.jpg" width="50" height="50" alt="avatar">
-                        <span> Nom Utilisateur </span>
+                        <img src="img/mickey.jpg" width="50" height="50" alt="avatar">
+                        <span> <?= $this->auteurManager->getNom($post->getId_auteur()) ?> </span>
                     </div>
                     <!-- Contenu du post + les commentaires  -->
                     <div class="panel-body">
                         <!-- Contenu du post  -->
                         <div class="well">
-                            <p>Voici mon poste:</p>
+                            <p><?= $post->getTexte() ?></p>
                         </div>
                         <!-- form pour recuperer le commentaire  -->
-                        <form>
+                        <form action="index.php?action=publiComm&id=<?= $id_post ?>" method="post">
                             <div class="form-group">
                                 <label for="text_com">Nouveau Commentaire</label>
-                                <input type="text" class="form-control" id="text-com" placeholder="Nouveau commentaire...">
+                                <input type="text" name="comm" class="form-control" id="text-com" placeholder="Nouveau commentaire...">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <input type="submit" class="btn btn-primary" value="Commenter">
                         </form>
                         <!-- Les anciens commentaires -->
+                        <!--Boucle  PHP pour recupere tout les postes ainsi que les gens qui les ont ecrits-->
+                        <?php while ($data = $commList->fetch()){ ?>
                         <div id="pasmal" class="well">
-                            <strong>Nom personne</strong>
-                            <p>Ancien commentaires </p>
+                            <strong><?= $this->auteurManager->getNom($data['id_auteur']) ?></strong>
+                            <p><?= $data['texte'] ?></p>
                         </div>
+                      <?php } ?>
                     </div>
                 </div>
             </div>

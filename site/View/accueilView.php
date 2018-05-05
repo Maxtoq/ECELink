@@ -52,7 +52,7 @@
                   </div>
                 </div>
               </div>
-              <!--Boucle  PHP pour recupere tout les postes ainsi que les gens qui les ont ecrits-->
+              <!--Boucle  PHP pour recupere tout les posts ainsi que les gens qui les ont ecrits-->
               <?php while ($data = $posts->fetch()){ ?>
              <!-- Conteneur photo ami plus nom plus texte publié-->
              <div class="row" id="post">

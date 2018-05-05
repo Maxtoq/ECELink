@@ -4,6 +4,7 @@ require('Model/EtudiantManager.php');
 require('Model/EnseignantManager.php');
 require('Model/ProManager.php');
 require('Model/PostManager.php');
+require('Model/CommentaireManager.php');
 
 class Controler {
     // Les Manager
@@ -12,6 +13,7 @@ class Controler {
     private $enseignantManager;
     private $proManager;
     private $postManager;
+    private $commManager;
 
     // L'utilisateur
     private $user;
@@ -27,6 +29,7 @@ class Controler {
         $this->enseignantManager = new EnseignantManager;
         $this->proManager = new ProManager;
         $this->postManager = new PostManager;
+        $this->commManager = new CommentaireManager;
     }
 
     public function getUser() { return $this->user; }
@@ -78,6 +81,11 @@ class Controler {
         $this->postManager->addPost($this->user->getId(), $texte);
     }
 
+    public function publiComm($texte) {
+        $this->commManager = new CommentaireManager;
+        $this->commManager->addComm($this->user->getId(), $_GET['id'], $texte);
+    }
+
     public function getLoad() {
         require('View/loadView.php');
     }
@@ -113,6 +121,19 @@ class Controler {
 
     public function getMessages() {
         require('View/messagesView.php');
+    }
+
+    public function getPost() {
+        // On récupère l'id de l'auteur
+        $id_post = $_GET['id'];
+
+        // On récupère le post en question
+        $post = $this->postManager->getById($id_post);
+
+        // On récupère la liste de commentaire
+        $commList = $this->commManager->selectList($id_post);
+
+        require('View/postView.php');
     }
 }
 ?>
