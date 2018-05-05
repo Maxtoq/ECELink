@@ -112,6 +112,8 @@
     </div>
     </div>
 
+    <button id="<?php echo($i) ?>" class="btnContact btn btn-success btn-3d btn-xs"><i class="fa fa-envelope-o"></i>
+
     <div class="modal fade" id="Modalcomment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
      <div class="modal-content">
@@ -124,7 +126,7 @@
        <div class="modal-body">
          <form method="post" action="traitement.php">
            <p>Rentrez votre texte ici :</p>
-           <textarea name="ameliorer" id="ameliorer1" rows="5" cols="50" placeholder="C'est ici que ça se passe!"></textarea>
+           <textarea name="ameliorer" id="to" rows="5" cols="50" placeholder="C'est ici que ça se passe!"></textarea>
          </form>
        </div>
        <div class="modal-footer">
