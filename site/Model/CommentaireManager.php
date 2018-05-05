@@ -60,22 +60,22 @@ class CommentaireManager extends Manager {
             $data = $q->fetch(PDO::FETCH_ASSOC);
 
             // On retourne le comm
-            return new Commentaire($data['id'], $data['actif'], $data['id_auteur'], $data['texte']);
+            return new Commentaire($data['id'], $data['actif'], $data['id_auteur'], $data['id_post'], $data['texte']);
         }
         // Sinon on retourne null
         else return null;
     }
 
     /**
-     * Renvoies les posts
+     * Renvoies les comm d'un post
      *
-     * @param  int $id_user id du user (inutile pour l'instant)
+     * @param  int $id_post id du post
      * @return array        champs retournés par la requête
      */
-    public function selectList($id_user) {
+    public function selectList($id_post) {
         // On éxécute la requête
         if (is_null(Manager::$db)) parent::dbConnect();
-        $q = Manager::$db->query('SELECT id, id_auteur, texte FROM '.self::COMM_TABLE.' ORDER BY id DESC');
+        $q = Manager::$db->query('SELECT id, id_auteur, id_post, texte FROM '.self::COMM_TABLE.' WHERE id_post = '.$id_post.' ORDER BY id DESC');
 
         // Si la requête est une résussite, on retourne le résultat de la requête
         if ($q) return $q;
