@@ -82,8 +82,19 @@ if (isset($_GET['action'])) {
         	}
         }
     }
+    // On cherche à s'inscrire
+    elseif ($_GET['action'] == 'new') {
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On charge la page monProfil
+            goPage('MONPROFIL');
+        }
+        else {
+            goPage('LOGIN');
+        }
+    }
     // On cherche à aller sur la page monProfil
-    elseif ($_GET['action'] == 'profil') {
+    elseif ($_GET['action'] == 'monProfil') {
         // Si on est déjà connecté
         if ($controler->getConnected()) {
             // On charge la page monProfil
@@ -139,10 +150,14 @@ if (isset($_GET['action'])) {
     }
     // On cherche à se déconnecter
     elseif ($_GET['action'] == 'deco') {
-        // On supprime les données de la session
-        session_destroy();
-        // On recharge la première page
-        header("Refresh:0; url = index.php");
+        // Si on est déjà connecté
+        if ($controler->getConnected()) {
+            // On charge la page monProfil
+            // On supprime les données de la session
+            session_destroy();
+            // On recharge la première page
+            header("Refresh:0; url = index.php");
+        }
     }
 }
 else {
