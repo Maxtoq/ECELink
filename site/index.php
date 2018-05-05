@@ -86,15 +86,59 @@ if (isset($_GET['action'])) {
     elseif ($_GET['action'] == 'new') {
         // Si on est pas connecté
         if (!$controler->getConnected()) {
+            // On récupère le contenu du form
             $nom = isset($_POST["nom"]) ? $_POST["nom"] : "";
             $prenom = isset($_POST["prenom"]) ? $_POST["prenom"] : "";
             $mail = isset($_POST["mail"]) ? $_POST["mail"] : "";
             $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
             $mdp1 = isset($_POST["mdp1"]) ? $_POST["mdp1"] : "";
             $mdp2 = isset($_POST["mdp2"]) ? $_POST["mdp2"] : "";
-            $pseudo = isset($_POST["pseudo"]) ? $_POST["pseudo"] : "";
-            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
-            $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
+            $descr = isset($_POST["descr"]) ? $_POST["descr"] : "";
+            $type = isset($_POST["typeRadio"]) ? $_POST["typeRadio"] : "";
+
+            // Si tous les champs sont remplis, et que les deux mdp sont égaux
+            if (($nom != "") && ($prenom != "") && ($mail != "") && ($pseudo != "") && ($mdp1 != "") && ($mdp2 != "") && ($descr != "") && ($type != "") && ($mdp1 == $mdp2)) {
+                // Si le champs étudiant est coché
+                if ($type == "Etudiant") {
+                    // On récupère les champs
+                    $maj = isset($_POST["maj"]) ? $_POST["maj"] : "";
+                    $promo = isset($_POST["promo"]) ? $_POST["promo"] : "";
+
+                    // Si ces champs sont remplis
+                    if (($maj != "") && ($promo != "")) {
+                        // On inscrit l'étudiant et on lance la page d'accueil
+                        $controler->signEtuIn($nom, $prenom, $mail, $pseudo, $mdp1, $descr, $promo, $maj);
+                        goPage('ACCUEIL');
+                    }
+                    else goPage('LOGIN');
+                }
+                elseif ($type == 'Enseignant') {
+                    // On récupère les champs
+                    $matiere = isset($_POST["matiere"]) ? $_POST["matiere"] : "";
+
+                    // Si ces champs sont remplis
+                    if ($matiere != "") {
+                        // On inscrit l'enseignant et on lance la page d'accueil
+                        $controler->signEnsIn($nom, $prenom, $mail, $pseudo, $mdp1, $descr, $matiere);
+                        goPage('ACCUEIL');
+                    }
+                    else goPage('LOGIN');
+                }
+                elseif ($type == 'Professionnel') {
+                    // On récupère les champs
+                    $entreprise = isset($_POST["entreprise"]) ? $_POST["entreprise"] : "";
+                    $poste = isset($_POST["poste"]) ? $_POST["poste"] : "";
+
+                    // Si ces champs sont remplis
+                    if (($entreprise != "") && ($poste != "")) {
+                        // On inscrit l'enseignant et on lance la page d'accueil
+                        $controler->signProIn($nom, $prenom, $mail, $pseudo, $mdp1, $descr, $entreprise, $poste);
+                        goPage('ACCUEIL');
+                    }
+                    else goPage('LOGIN');
+                }
+            }
+            else goPage('LOGIN');
         }
         else {
             goPage('ACCUEIL');

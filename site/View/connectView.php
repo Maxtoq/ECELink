@@ -80,7 +80,7 @@
               Enseignant
              </label>
              <label class="form-check-label">
-               <input type="radio" class="form-check-input" name="typeRadio" id="pro" onclick="Check()" value="Professionel" autocomplete="off" >
+               <input type="radio" class="form-check-input" name="typeRadio" id="pro" onclick="Check()" value="Professionnel" autocomplete="off" >
                Professionel
              </label>
              <div class="reveal-if-active" id="ifYes"  style="display:none">

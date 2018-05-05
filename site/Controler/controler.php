@@ -58,6 +58,21 @@ class Controler {
         else $this->connected = false;
     }
 
+    public function signEtuIn($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_promo, $_maj) {
+        $this->user = $this->etudiantManager->addEtudiant($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_promo, $_maj);
+        if (!is_null($this->user)) $this->connected = true;
+    }
+
+    public function signEnsIn($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_matiere) {
+        $this->user = $this->enseignantManager->addEnseignant($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_matiere);
+        if (!is_null($this->user)) $this->connected = true;
+    }
+
+    public function signProIn($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_entreprise, $_poste) {
+        $this->user = $this->proManager->addPro($_nom, $_prenom, $_mail, $_pseudo, $_mdp, $_descr, $_entreprise, $_poste);
+        if (!is_null($this->user)) $this->connected = true;
+    }
+
     public function getLoad() {
         require('View/loadView.php');
     }
