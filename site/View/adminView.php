@@ -1,79 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Projet Ece Link </title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type = "text/css" href ="Navbar.css">
-<link rel="stylesheet" href="css/demo.css">
-<link rel="stylesheet" href="css/footer-distributed.css">
+<!-- Titre de la page -->
+<?php $title = 'ECELink - >Admin'; ?>
 
-
-
-
-
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Stylesheet et scripts à inclure -->
+<?php ob_start(); ?>
 <script type="text/javascript" src ="script_administrateur.js"></script>
+<?php $include = ob_get_clean(); ?>
+<?php ob_end_flush(); ?>
 
-<style>
-
-</style>
-</head>
-<body>
-
-      <!--Navbar, froncée -->
-<nav class="navbar navbar-inverse">
-<div class="container-fluid">
-<div class="navbar-header">
- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-   <span class="icon-bar"></span>
-   <span class="icon-bar"></span>
-   <span class="icon-bar"></span>
- </button>
- <a class="navbar-brand" href="#">Logo</a>
-</div>
-<div class="collapse navbar-collapse" id="myNavbar">
- <ul class="nav navbar-nav">
-   <li class="active"><a href="#">Accueil</a></li>
-   <li><a href="#">Profil</a></li>
-   <li><a href="#">Réseau</a></li>
- </ul>
- <form class="navbar-form navbar-right" role="search">
-   <div class="form-group input-group">
-     <input type="text" class="form-control" placeholder="Search..">
-     <span class="input-group-btn">
-       <button class="btn btn-default" type="button">
-         <span class="glyphicon glyphicon-search"></span>
-       </button>
-     </span>
-   </div>
- </form>
- <ul class="nav navbar-nav navbar-right">
-    <li>
-      <div class="dropdown">
-        <button type="button" class="btn btn-lg btn-link" data-toggle="dropdown">
-          <span class="glyphicon glyphicon-fire"></span>
-        </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-          </ul>
-      </div>
-
-
-  </li>
-   <li><a href="#">M</a></li>
- </ul>
-</div>
-</div>
-</nav>
-
-
+<?php ob_start(); ?>
 <div class="container">
  <div class="row">
   <h1 class="page-header" style ="color:#3277b3;" align= center >Profil administrateur </h1>
@@ -389,39 +323,5 @@
   </div>
  </div>
 </div>
-
-
-
-<!--footer dela page-->
-<footer class="footer-distributed" id ="footer">
-
-<div class="footer-right">
-
- <a href="#"><i class="fa fa-facebook"></i></a>
- <a href="#"><i class="fa fa-twitter"></i></a>
- <a href="#"><i class="fa fa-linkedin"></i></a>
- <a href="#"><i class="fa fa-github"></i></a>
-
-</div>
-
-<div class="footer-left">
-
- <p class="footer-links">
-   <a href="#">Accueil</a>
-   ·
-   <a href="#">Profil</a>
-   ·
-   <a href="#">Réseau</a>
-   ·
-   <a href="#">Messages</a>
-
-   ·
-   <a href="#">Contact</a>
- </p>
-
- <p>Le Coon et sa Bande &copy; 2018</p>
-</div>
-
-</footer>
-</body>
-</html>
+<?php $include = ob_get_clean(); ?>
+<?php ob_end_flush(); ?>

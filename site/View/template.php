@@ -60,7 +60,7 @@
 
 
                 </li>
-                 <li><a href="index.php?action=message">M</a></li>
+                 <li><a href="index.php?action=messages">M</a></li>
                 </ul>
             </div>
         </div>
@@ -85,7 +85,7 @@
                       ·
                       <a href="index.php?action=reseau">Réseau</a>
                       ·
-                      <a href="index.php?action=message">Messages</a>
+                      <a href="index.php?action=messages">Messages</a>
                       ·
                       <a href="index.php?action=emplois">Emplois</a>
                 </p>
