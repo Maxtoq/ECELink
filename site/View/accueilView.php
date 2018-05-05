@@ -21,8 +21,8 @@
                     <a href="index.php?action=monProfil"><img src="img/mickey.jpg" class="img-circle" height="80" width="80" alt="Avatar"></a>
                 </div>
                 <div class="Info perso">
-                    <!-- Ecriture Sa description-->
-                    <h4 style ="color:#3277b3;">Descritpion Personnelle</h4>
+                    <!-- Affichage Sa description-->
+                    <h4 style ="color:#3277b3;">Description Personnelle</h4>
                     <p><?= $this->user->getDescr() ?></p>
                 </div>
             </div>
@@ -31,14 +31,17 @@
          <div class="col-sm-7 ">
           <div class="panel panel-primary" >
              <div class="panel-heading">
+                 <!--panel pour notre mur ses publi etc-->
                  <h3 class="panel-title" align=left >Votre Mur :</h3>
              </div>
+             <!--panel body pour les publi etc-->
              <div class="panel-body">
               <div class="row" id="publi">
                 <div class="col-sm-12">
                   <div class="panel panel-default text-left">
                     <div class="panel-body">
                       <p style ="color:#3277b3;"><strong>Statut : </strong> </p>
+                      <!--Form pour la publication-->
                       <form action="index.php?action=publiPost" method="post">
                           <textarea  name="publi"  rows="1" cols="80" resize : none placeholder="Partagez comment vous sentez vous!"></textarea>
                           <div class="buttonpubli">
@@ -49,29 +52,38 @@
                   </div>
                 </div>
               </div>
+              <!--Boucle  PHP pour recupere tout les postes ainsi que les gens qui les ont ecrits-->
               <?php while ($data = $posts->fetch()){ ?>
              <!-- Conteneur photo ami plus nom plus texte publié-->
              <div class="row" id="post">
                <!--Conteneur photo-->
                <div class="col-sm-3" >
                  <div class="well" id="conteneur_photo">
+                     <!--lien vers le profil de l'auteur de la publication-->
                      <a href="index.php?action=profil&id=<?= $data['id_auteur'] ?>">
+                         <!--Affichage du nom de la personne qui a fait le post-->
                          <p ><strong> <?= $this->auteurManager->getNom($data['id_auteur']) ?></strong></p>
                          <img src="img/mickey.jpg" class="img-circle"  height="70" width="70" alt="Avatar">
                      </a>
                 </div>
                </div>
+               <!--Colonne pour le contenu de la publication-->
                <div class="col-sm-9" id="contpubli">
                   <div class="well" >
+                      <!--On recupere le texte-->
                         <p> <?= htmlspecialchars( $data['texte'])?></p>
+                        <!-- Lien vers la page du post pour voir les commentaires deja présent sur le bouton "aller à la publication " -->
                         <a href="index.php?action=post&id=<?= $data['id'] ?>">
+                            <!-- Utilisation d'une icone pour meilleur rendu visuel -->
                             <button type="button" class="btn btn-default btn-sm">
-                                <span class="glyphicon glyphicon-zoom-in"></span> Go to Publication
+                                <span class="glyphicon glyphicon-zoom-in"></span> Aller à la Publication
                             </button>
                         </a>
+                        <!--Icone Like-->
                          <button type="button" class="btn btn-default btn-sm">
                              <span class="glyphicon glyphicon-thumbs-up"></span> Like
                          </button>
+                        <!--panel pour notre mur ses publi etc-->
                    <div class="dropdown">
                      <button type="button" data-toggle="modal"  data-target="#message<?php echo $data['id'];?>" class="btn btn-default btn-sm">
                      <span class="glyphicon glyphicon-comment"></span> Commenter
