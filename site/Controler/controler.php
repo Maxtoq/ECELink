@@ -13,6 +13,8 @@ class Controler {
 
     // L'utilisateur
     private $user;
+    // Le booleen de connexion
+    private $connected;
 
     public function __construct() {
         $this->auteurManager = new AuteurManager;
@@ -23,6 +25,7 @@ class Controler {
     }
 
     public function getUser() { return $this->user; }
+    public function getConnected() { return $this->connected; }
 
     /**
      * Tente de se connecter à un compte Auteur avec le pseudo et le mdp
@@ -39,10 +42,10 @@ class Controler {
         $this->enseignantManager->addEnseignant('Tournesol', 'Kévin','kevtourn@ece.fr','kevdu56','kevin1978','bjr moi c kev','Imitation de Gérard Jugnot');
         $this->proManager->addPro('Musk','Ellon','ellonkikou@gmail.com','KingdomDestroyer','ellon123','slt les copains, vous voulez voir mon lance-flamme ?', 'SpaceX','le boss');
 
-        // Si user est bien connecté à un compte, on retourne true
-        if (!is_null($this->user)) return true;
-        // Sinon on retourne false
-        else return false;
+        // Si user est bien connecté à un compte, on met connected à true
+        if (!is_null($this->user)) $this->connected = true;
+        // Sinon on met connected à false
+        else $this->connected = false;
     }
 
     public function getLoad() {
