@@ -65,7 +65,13 @@ class PostManager extends Manager {
         else return null;
     }
 
-    public function selectList($id_auteur) {
+    /**
+     * Renvoies les posts
+     *
+     * @param  int $id_user id du user (inutile pour l'instant)
+     * @return array        champs retournés par la requête
+     */
+    public function selectList($id_user) {
         // On éxécute la requête
         if (is_null(Manager::$db)) parent::dbConnect();
         $q = Manager::$db->query('SELECT id, id_auteur, texte FROM '.self::POST_TABLE.' ORDER BY id DESC');
